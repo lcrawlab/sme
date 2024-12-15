@@ -1,0 +1,14 @@
+pandoc: 3.1.11
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  mmer: mmer.html
+  study-erythroid-differentiation-data: study-erythroid-differentiation-data.html
+  tutorial-cite-us: tutorial-cite-us.html
+  tutorial-create-mask-file: tutorial-create-mask-file.html
+  tutorial-memory-optimization: tutorial-memory-optimization.html
+  tutorial-simulate-traits: tutorial-simulate-traits.html
+last_built: 2024-12-15T21:23Z
+urls:
+  reference: https://lcrawlab.github.io/mmer/reference
+  article: https://lcrawlab.github.io/mmer/articles
