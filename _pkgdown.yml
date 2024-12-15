@@ -1,0 +1,49 @@
+url: https://lcrawlab.github.io/mmer/
+
+template:
+  bootstrap: 5
+  light-switch: true
+  bslib:
+    primary: "#0054AD"
+    border-radius: 0.5rem
+    btn-border-radius: 0.25rem
+    danger: "#A6081A"
+  includes:
+    in_header:
+      <script defer data-domain="pkgdown.r-lib.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
+
+reference:
+- title: "Multimodal Marginal Epistasis Analysis"
+  desc: >
+    Functions for the marginal epistasis analysis.
+  contents:
+  - mme
+- title: "Simulate Quantitative Traits"
+  desc: >
+    Functions for simulating quantitative traits with pairwise epistasis.
+  contents:
+  - simulate_traits
+- title: "Utility Functions"
+  desc: >
+    Utility functions.
+  contents:
+  - approximate_memory_requirements
+  - create_hdf5_file
+  - read_hdf5_dataset
+  - write_hdf5_dataset
+  
+- title: "Simulated Data Examples"
+  desc: "RDA data files for illustration purposes."
+  contents:
+  - getting_started
+
+articles:
+- title: Tutorials
+  navbar: Tutorials
+  contents:
+  - starts_with("tutorial")
+- title: Studies
+  navbar: Studies
+  desc: Vignettes with example studies
+  contents:
+  - starts_with("study")

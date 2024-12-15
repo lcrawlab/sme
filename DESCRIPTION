@@ -1,0 +1,50 @@
+Package: mmer
+Title: The Multimodal Marginal Epistasis Test
+Version: 0.0.1
+URL: https://github.com/lcrawlab/mmer, https://lcrawlab.github.io/mmer/
+BugReports: https://github.com/lcrawlab/mmer/issues
+Authors@R: c(
+    person("Julian", "Stamp", email = "julian.d.stamp@gmail.com",
+    role = c("cre", "aut"), comment = c(ORCID = "0000-0003-3014-6249")),
+    person("Lorin", "Crawford", email = "lcrawford@microsoft.com",
+    role = "aut", comment = c(ORCID = "0000-0003-0178-8242")))
+Description: A computationally efficient genetics method which detects 
+    statistical epistasis in complex traits.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LinkingTo:
+    BH,
+    Rcpp,
+    RcppEigen,
+    Rhdf5lib,
+    testthat
+Imports: 
+    dplyr,
+    genio,
+    logging,
+    mvMAPIT,
+    Rcpp,
+    RcppEigen,
+    tidyr
+Suggests: 
+    GenomicRanges,
+    ggplot2,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    xml2
+Config/testthat/edition: 3
+SystemRequirements: GNU make
+VignetteBuilder: knitr
+Depends: 
+    R (>= 4.4.0)
+LazyData: true
+biocViews:     
+    GenomeWideAssociation,
+    Epistasis,
+    Genetics,
+    SNP,
+    LinearMixedModel
+

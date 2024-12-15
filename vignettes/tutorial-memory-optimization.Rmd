@@ -1,0 +1,159 @@
+---
+title: "How To Optimize the Memory Requirements of MME"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How To Optimize the Memory Requirements of MME}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message = FALSE, 
+  warning = FALSE
+)
+```
+
+```{r setup}
+library(mmer)
+library(tidyr)
+library(dplyr)
+library(knitr)
+```
+
+This tutorial outlines the factors that affect memory usage when running the 
+`mme()` function and how to adjust parameters to optimize memory consumption
+based on your available resources. To estimate memory requirements, use the
+`approximate_memory_requirements()` function, which provides a rough estimate
+of the C++ objects stored in memory during the `mme()` function call, though it
+may not reflect exact memory usage.
+
+## Genotype Data Size and Number of Blocks
+
+The sample size is the primary factor influencing memory requirements. Both
+phenotype and genotype data need to be loaded into memory for computation. For
+large datasets, like Biobank-scale data (350k samples and 500k SNPs), loading
+the entire dataset into memory requires about 1.4TB (assuming double precision
+for the data matrix), which exceeds most machines' capacities.
+
+To manage large datasets more efficiently, `mme()` reads the genotype data in
+smaller blocks. The parameter `n_blocks` controls the number of blocks. For
+instance, with 500k SNPs, setting `n_blocks = 100` will load 5000 SNPs into
+memory at a time, reducing the memory load and allowing computations to proceed
+block by block.
+
+## Number of Random Vectors
+
+The `mme()` function uses a stochastic trace estimator to approximate the trace
+of matrix products efficiently. The number of random vectors impacts both the
+accuracy of trace estimates and memory and computational efficiency.
+
+During blockwise computation, the algorithm stores intermediate matrices sized
+`sample_size x n_randvecs`. Increasing the number of random vectors improves
+accuracy but also increases memory usage and computation time. Typically, using
+around 10 random vectors provides reasonably accurate results.
+
+## Number of SNPs Sharing Random Vectors
+
+The `chunk_size` parameter controls how many SNPs share the same set of random
+vectors, enhancing the efficiency of genome-wide data processing. This method
+reduces redundant calculations of the genetic relatedness covariance matrix and
+minimizes the time spent reading genotype data into memory.
+
+For each set of SNPs analyzed together (in a "chunk"), intermediate results must
+be stored. Consequently, the memory requirement grows with the chunk size,
+calculated as: `chunk_size x (sample_size x n_randvecs)`.
+
+<img src="../reference/figures/mme-shared-rvs.png"  width="100%"
+alt="Multimodal Marginal Epistasis test (MME) schematic pseudo-random vectors"/>
+**Figure 1.** Schematic overview illustrating the compuational speedup resulting
+from sharing random vectors. 
+**(a)** In the randomized trace estimates we can identify reusable matrix by
+vector products. Computing the exact trace of a product of two covariance
+matrices is prohibitively computationally expensive. Instead, the multimodal
+marginal epistasis (MME) test approximates the traces using random vectors $z$.
+For the full MQS computation of the point estimates of the variance components,
+we see that the matrix-by-vector products of the form $Az$ with $A \in \{K, G\}$
+appear repeatedly. **(b)** The genetic relatedness matrix $K$ is the same for
+all focal SNPs. Using unique random vectors in this computation for every focal
+SNP, we compute the same quantity repeatedly. Computing the matrix-by-vector
+products $Kz$ constitutes almost half of the computation time of the point
+estimates. **(c)** By sharing random vectors $z$ between focal SNPs, computing
+$Kz$ can be done once for all focal SNPs that share random vectors. With this,
+the computation time of $Kz$ becomes negligible.
+
+
+## Genotype Masking for the Gene-by-Gene Interaction Covariance
+
+Masking genotypes that do not contribute to epistasis can help reduce memory
+usage and computation time. When masked, these genotypes do not need to be
+stored in memory, significantly decreasing memory requirements. Note that the
+`approximate_memory_requirements()` function does not account for this
+reduction.
+
+## Explore the Memory Requirements
+
+To estimate memory needs based on your chosen parameters, use the
+`approximate_memory_requirements()` function. This function helps you determine
+if your planned settings will fit within available memory and identify which
+parameters can be adjusted to meet your resource constraints. The parameters
+`n_blocks`, `n_randvecs`, and `chunk_size` are particularly flexible and have a
+significant impact on memory usage. Note however, that it does not account for
+masking and therefore likely overestimates the required memory.
+
+
+```{r memory}
+n_samples <- c(350000)
+n_snps <- c(500000)
+n_blocks <- c(1, 100, 1000)
+n_randvecs <- c(10, 100)
+chunk_size <- c(10, 100)
+
+parameters <- crossing(
+  n_samples = n_samples,
+  n_snps = n_snps,
+  n_blocks = n_blocks,
+  n_randvecs = n_randvecs,
+  chunk_size = chunk_size
+)
+
+
+estimated_memory <- parameters %>%
+  mutate(memory_gb = round(
+    approximate_memory_requirements(n_samples, 
+                                    n_snps, 
+                                    n_blocks, 
+                                    n_randvecs, 
+                                    chunk_size),
+    2
+  ))
+
+kable(estimated_memory)
+```
+
+## A Note on the Runtime of MME
+
+Despite the computational efficiency of MME, genome-wide testing requires 
+considerable resources. We recommend to analyze data in batches, and to launch 
+multiple processes simultaneously on a high-performance cluster (HPC).
+In [this study](articles/study-erythroid-differentiation-data.html),
+we analyzed 544k SNPs genotype in 350k individuals. We launched 544 slurm jobs
+requesting 43GB memory and 6 CPUs each to analyze batches of 1000 SNPs with
+chunk sizes of 250 SNPs.
+Genome-wide testing of a single trait on an HPC with 960
+CPUs and 6840GB of memory available took about 3.5 days.
+
+<img src="../reference/figures/mme-runtime.png"
+width="100%" alt="Multimodal Marginal Epistasis test (MME) runtime" />
+**Figure 2. ** MME has improved power to detect marginal epistasis and runs
+10x to 90x faster than state-of-the-art methods.
+The CPU time was measured on 350,000 individuals.
+
+## SessionInfo
+
+```{r seesionInfo}
+sessionInfo()
+```
+
