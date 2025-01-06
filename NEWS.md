@@ -1,4 +1,4 @@
-# mmer 0.0.1
+# sme 0.0.1
 
-* Version that was used in the publication of MME.
+* Version that was used in the publication of SME.
 

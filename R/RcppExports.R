@@ -2,38 +2,38 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 check_openmp <- function() {
-    .Call('_mmer_check_openmp', PACKAGE = 'mmer')
+    .Call('_sme_check_openmp', PACKAGE = 'sme')
 }
 
 count_samples <- function(filename) {
-    .Call('_mmer_count_samples', PACKAGE = 'mmer', filename)
+    .Call('_sme_count_samples', PACKAGE = 'sme', filename)
 }
 
 count_fam <- function(filename) {
-    .Call('_mmer_count_fam', PACKAGE = 'mmer', filename)
+    .Call('_sme_count_fam', PACKAGE = 'sme', filename)
 }
 
 count_snps_bim <- function(filename) {
-    .Call('_mmer_count_snps_bim', PACKAGE = 'mmer', filename)
+    .Call('_sme_count_snps_bim', PACKAGE = 'sme', filename)
 }
 
 createH5File <- function(filename) {
-    invisible(.Call('_mmer_createH5File', PACKAGE = 'mmer', filename))
+    invisible(.Call('_sme_createH5File', PACKAGE = 'sme', filename))
 }
 
 readH5File <- function(filename, datasetName) {
-    .Call('_mmer_readH5File', PACKAGE = 'mmer', filename, datasetName)
+    .Call('_sme_readH5File', PACKAGE = 'sme', filename, datasetName)
 }
 
 replaceH5Dataset <- function(filename, datasetName, newData) {
-    invisible(.Call('_mmer_replaceH5Dataset', PACKAGE = 'mmer', filename, datasetName, newData))
-}
-
-mme_cpp <- function(plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset) {
-    .Call('_mmer_mme_cpp', PACKAGE = 'mmer', plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset)
+    invisible(.Call('_sme_replaceH5Dataset', PACKAGE = 'sme', filename, datasetName, newData))
 }
 
 simulate_traits_cpp <- function(plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2) {
-    .Call('_mmer_simulate_traits_cpp', PACKAGE = 'mmer', plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2)
+    .Call('_sme_simulate_traits_cpp', PACKAGE = 'sme', plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2)
+}
+
+sme_cpp <- function(plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset) {
+    .Call('_sme_sme_cpp', PACKAGE = 'sme', plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset)
 }
 

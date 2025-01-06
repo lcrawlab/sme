@@ -2,7 +2,7 @@
 
 // this should come from one configuration file
 std::string testdata_dir = "../../inst/testdata/";
-std::string checkdata_dir = "../../mmer/testdata/";
+std::string checkdata_dir = "../../sme/testdata/";
 
 std::string test_bed = testdata_dir + "test.bed";
 std::string test_csv = testdata_dir + "test.csv";

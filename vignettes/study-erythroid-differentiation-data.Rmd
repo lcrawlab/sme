@@ -11,19 +11,19 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  message = FALSE, 
+  message = FALSE,
   warning = FALSE
 )
 ```
 
 ```{r setup}
 library(GenomicRanges)
-library(mmer)
+library(sme)
 ```
 
 # DNAse I hypersensitive sites of erythroid differentiation reveal statistical epistasis in human hematology traits
 
-We apply MME to hematology traits of white British individuals from the
+We apply SME to hematology traits of white British individuals from the
 UK Biobank. After quality control, the remaining data are  349,411 individuals
 and 543,813 SNPs of common variants. We select the traits mean
 corpuscular hemoglobin (MCH), mean corpuscular hemoglobin concentration, mean
@@ -45,9 +45,9 @@ HCT, is not informed by functional data of erythropoiesis.
 
 ## Mask File Preparation
 
-The external data sources used in this study represented genomic intervals 
+The external data sources used in this study represented genomic intervals
 of DHS regions and LD blocks. In the following we mock this data to illustrate
-how to create a mask file for `mme()`. 
+how to create a mask file for `sme()`.
 See [How To Create a Mask File](articles/tutorial-create-mask-file.html) for
 more details.
 
@@ -106,7 +106,7 @@ dhs_data <- dhs_data[!duplicated(dhs_data$index), ]
 
 Of the 543,813 SNPs in our data, 4,932 are located in the DHS regions. The DHS
 regions in this data are distributed along the whole genome. To test for
-marginal epistasis with MME we consider the variants in the DHS regions
+marginal epistasis with SME we consider the variants in the DHS regions
 important.
 
 Next we map the `PLINK` data to the LD blocks.
@@ -125,8 +125,8 @@ ld_overlaps <- findOverlaps(query = bim_gr, subject = ld_gr)
 
 With these objects, we can create the mask file. With
 larger data, we recommend splitting the `PLINK` variants that are analyzed into
-batches, create one mask file per batch, and submit one job per batch on a 
-High Peformance Cluster. 
+batches, create one mask file per batch, and submit one job per batch on a
+High Peformance Cluster.
 
 ```{r write_mask}
 output_file <- tempfile()
@@ -140,22 +140,22 @@ create_hdf5_file(output_file)
 for (j in bim_data$index - 1) { # 0-base index for C++
   # Write DHS mask
   gxg_ds <- sprintf("%s/%d", gxg_group, j)
-  write_hdf5_dataset(file_name = output_file, 
-                     dataset_name = gxg_ds, 
+  write_hdf5_dataset(file_name = output_file,
+                     dataset_name = gxg_ds,
                      gxg_variants)
-  
+
   # Find LD block of focal SNP
   focal_gr <- ld_gr[subjectHits(ld_overlaps[j,])]
-  
+
   # Find variants in LD block of focal SNP
   focal_ld <- findOverlaps(query = bim_gr, subject = focal_gr)
   ld_data <- bim_data[queryHits(focal_ld),]
   ld_variants <- ld_data$index - 1 # 0-base index for C++
-  
+
   # Write LD mask
   ld_ds <- sprintf("%s/%d", ld_group, j)
-  write_hdf5_dataset(file_name = output_file, 
-                     dataset_name = ld_ds, 
+  write_hdf5_dataset(file_name = output_file,
+                     dataset_name = ld_ds,
                      ld_variants)
 }
 
@@ -163,10 +163,10 @@ dhs_indices <- read_hdf5_dataset(file_name = output_file, dataset_name = gxg_ds)
 print(sprintf("DHS indices: %s", paste(dhs_indices, collapse = ", ")))
 ```
 
-With this mask file we can run MME.
+With this mask file we can run SME.
 
-```{r run_mme, eval = FALSE}
-mme_result <- mme(
+```{r run_sme, eval = FALSE}
+sme_result <- sme(
   plink_file = "/path/to/plink/data",
   pheno_file = "/path/to/pheno/data",
   mask_file = "/path/to/mask/file",
@@ -186,8 +186,8 @@ previously discovered for non-additive gene action related to erythropoiesis
 and RBC traits.
 
 
-# <img src="../reference/figures/dhs_manhattan.png"  width="100%" alt="Erythroid differentiation DHS sites MME analysis" />
-**Figure 1.** Manhattan plot of the MME analysis. The dashed blue line is the
+# <img src="../reference/figures/dhs_manhattan.png"  width="100%" alt="Erythroid differentiation DHS sites SME analysis" />
+**Figure 1.** Manhattan plot of the SME analysis. The dashed blue line is the
 significance threshold after Bonferroni correction.
 
 The strongest association in the trait MCH, SNP rs4711092 ($P =
@@ -196,7 +196,7 @@ gene secretagogin (\textit{SCGN}). The gene \textit{SCGN} regulates exocytosis
 by interacting with two soluble NSF adaptor
 proteins (\textit{SNAP-25} and \textit{SNAP-23}) and is critical for cell
 growth in some tissues.
-A total of five SNPs which MME significantly associates
+A total of five SNPs which SME significantly associates
 with MCH (strongest association with rs9366624 $P = \num{1.8e-9}$, PVE 1.1\%)
 are in the gene capping protein regulator and myosin 1 linker 1
 (\textit{CARMIL1}).
@@ -214,7 +214,7 @@ The strongest association in the trait MCV, SNP rs9276 ($P = \num{9.09e-10}$,
 PVE 0.24\%) maps to the gene \textit{HLA-DBP1} of the major histocompatibility
 complex. With the SNP rs9366624 ($P = \num{1.86e-8}$, PVE 0.8\%), also the gene
 \textit{CARMIL1} is significantly associated with the trait for marginal
-epistasis. The complete list of significant associations produced by MME is
+epistasis. The complete list of significant associations produced by SME is
 reported in Tab. 1.
 
 
@@ -234,9 +234,9 @@ reported in Tab. 1.
 
 
 
-Fitting the linear mixed model of MME also produces narrow-sense heritability
+Fitting the linear mixed model of SME also produces narrow-sense heritability
 estimates equivalent to RHE regression. The heritability
-estimates of MME for the four traits in this study are similar
+estimates of SME for the four traits in this study are similar
 to heritability estimates found in the literature(Tab. 2).
 
 | **Trait** | **$h^2$**      |
@@ -245,14 +245,14 @@ to heritability estimates found in the literature(Tab. 2).
 |	MCH       | 0.56 (0.03) |
 |	MCHC      | 0.14 (0.01) |
 |	MCV       | 0.52 (0.03) |
-**Table 2.** Narrow-sense heritability ($h^2$) estimates in the MME analysis.
+**Table 2.** Narrow-sense heritability ($h^2$) estimates in the SME analysis.
 
 # References
-- Stamp J, Pattilo-Smith S, Weinreich D & Crawford L (2024). Integration of 
+- Stamp J, Pattilo-Smith S, Weinreich D & Crawford L (2024). Integration of
   functional genomic maps enables genome-wide detection of
   epistasis in human complex traits. bioRXiv.
-- Georgolopoulos, G. GEO Data Set: Discrete regulatory modules instruct 
-  hematopoietic lineage commitment and differentiation 
+- Georgolopoulos, G. GEO Data Set: Discrete regulatory modules instruct
+  hematopoietic lineage commitment and differentiation
   <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182816> (2024).
 
 # SessionInfo

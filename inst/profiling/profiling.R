@@ -1,4 +1,4 @@
-library(mmer)
+library(sme)
 library(tidyr)
 
 plink_file <- "/Users/jds/data/ukbb/c12_100k-samples_020k-snps"
@@ -29,7 +29,7 @@ duration$average_duration <- rep(0, nrow(parameter_grid))
 
 for (i in 1:nrow(parameter_grid)) {
   # i <- 2
-  result <- mme(plink_file,
+  result <- sme(plink_file,
                  pheno_file,
                  covariate_file,
                  parameter_grid$mask_file[i],

@@ -4,16 +4,16 @@
 up-to-date. 
 `devtools::build_readme()` is handy for this. -->
 
-# The Multimodal Marginal Epistasis test <img src="man/figures/logo.png" align="right" height="200" alt="" />
+# The Sparse Marginal Epistasis test <img src="man/figures/logo.png" align="right" height="200" alt="" />
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `mmer` package implements a computationally and statistically
+The `sme` package implements a computationally and statistically
 efficient method for detecting marginal epistasis in genome-wide
 association studies (GWAS). Find the full package documentation
-including examples and articles here: [Multimodal Marginal Epistasis
-test Documentation](https://lcrawlab.github.io/mmer/).
+including examples and articles here: [Sparse Marginal Epistasis
+test Documentation](https://lcrawlab.github.io/sme/).
 
 ## Key Features
 
@@ -26,17 +26,17 @@ test Documentation](https://lcrawlab.github.io/mmer/).
 - Optimize for Memory Constraints: Highly configurable block wise
   processing of the data allows to make the most of available resources.
   See also [How To Optimize the Memory Requirements of
-  MME](articles/tutorial-memory-optimization.html).
+  SME](articles/tutorial-memory-optimization.html).
 - Parallelization: Utilizes OpenMP for multi-threaded processing.
 
 ## Installation
 
-You can install the development version of mmer from
+You can install the development version of sme from
 [GitHub](https://github.com/) with:
 
 ``` r
 install.packages("devtools")
-devtools::install_github("lcrawlab/mmer")
+devtools::install_github("lcrawlab/sme")
 ```
 
 ## Dependencies
@@ -58,7 +58,7 @@ BiocManager::install("Rhdf5lib")
 ```
 
 The full list of R dependencies can be found in the [DESCRIPTION
-file](https://github.com/lcrawlab/mmer/blob/main/DESCRIPTION).
+file](https://github.com/lcrawlab/sme/blob/main/DESCRIPTION).
 
 ### OpenMP
 

@@ -1,7 +1,7 @@
 set.seed(123)
 library(dplyr)
 library(genio)
-library(mmer)
+library(sme)
 
 plink_file <- tempfile()
 n_samples <- 5000
@@ -70,7 +70,7 @@ rand_seed <- 123
 n_threads <- 5
 log_level <- "DEBUG"
 
-getting_started <- mme(
+getting_started <- sme(
   plink_file,
   pheno_file,
   mask_file,

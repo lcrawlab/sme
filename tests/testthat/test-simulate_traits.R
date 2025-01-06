@@ -3,13 +3,13 @@ test_that("simulate_traits works", {
   plink_file <-
     gsub("\\.bed",
          "",
-         system.file("testdata", "test.bed", package = "mmer"))
+         system.file("testdata", "test.bed", package = "sme"))
   out_file <- tempfile()
   additive_heritability <- 0.3
   gxg_heritability <- 0.1
   additive_snps <- sort(sample(1:100, 50, replace = F))
   gxg_group_1 <- sort(sample(additive_snps, 10, replace = F))
-  gxg_group_2 <- sort(sample(setdiff(additive_snps, gxg_group_1), 10, 
+  gxg_group_2 <- sort(sample(setdiff(additive_snps, gxg_group_1), 10,
                              replace = F))
   target_mean <- 0
   target_var <- 1
@@ -36,7 +36,7 @@ test_that("simulate_traits works for zero gxg heritability", {
   plink_file <-
     gsub("\\.bed",
          "",
-         system.file("testdata", "test.bed", package = "mmer"))
+         system.file("testdata", "test.bed", package = "sme"))
   out_file <- tempfile()
   additive_heritability <- 0.3
   gxg_heritability <- 0.0

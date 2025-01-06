@@ -1,7 +1,7 @@
 #' Simulate Quantitative Traits from PLINK Genotypes
 #'
-#' This function simulates a quantitative trait based on additive and epistatic 
-#' genetic effects using genotype data from a PLINK dataset. The simulated trait 
+#' This function simulates a quantitative trait based on additive and epistatic
+#' genetic effects using genotype data from a PLINK dataset. The simulated trait
 #' is saved to a specified output file in a phenotype format compatible with
 #' PLINK.
 #'
@@ -34,12 +34,12 @@
 #'   and `gxg_indices_2`, contributing to the `gxg_heritability`.
 #' - Environmental effects: Any remaining variance not explained by genetic
 #'   effects is assigned to random environmental noise.
-#' 
-#' The output file is in PLINK-compatible phenotype format with three columns: 
+#'
+#' The output file is in PLINK-compatible phenotype format with three columns:
 #' Family ID (`FID`), Individual ID (`IID`), and the simulated trait (`TRAIT`).
 #'
 #' @examples
-#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package = "mmer"))
+#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package = "sme"))
 #' out_file <- tempfile()
 #' additive_heritability <- 0.3
 #' gxg_heritability <- 0.1
@@ -59,7 +59,7 @@
 #' from_file <- read.table(out_file, header = TRUE)
 #' head(from_file)
 #'
-#' @useDynLib mmer
+#' @useDynLib sme
 #' @import genio
 #' @import dplyr
 #' @importFrom utils write.table
@@ -75,7 +75,7 @@ simulate_traits <- function(plink_file,
 
 
   logging::basicConfig(level = log_level)
-  log <- logging::getLogger("mmer::simulate_traits")
+  log <- logging::getLogger("sme::simulate_traits")
 
   if (additive_heritability + gxg_heritability > 1) {
     stop("Additive heritability and gxg heritability should sum to less than 1")

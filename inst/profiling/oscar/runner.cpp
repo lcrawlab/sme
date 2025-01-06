@@ -1,4 +1,4 @@
-#include "mme.h"
+#include "sme.h"
 #include <string>
 
 int main() {
@@ -32,7 +32,7 @@ int main() {
             //                                   15,
     };
     Rcpp::List results =
-            mme_cpp(plink_file, pheno_file, mask_file, plink_file, n_randvecs, n_blocks,
+            sme_cpp(plink_file, pheno_file, mask_file, plink_file, n_randvecs, n_blocks,
                      rand_seed, index_vector, n_threads, gxg_h5_group, ld_h5_group);
     return 0;
 }

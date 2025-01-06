@@ -5,7 +5,7 @@
 \alias{getting_started}
 \title{Simulated Dataset for Genome-Wide Interaction Analysis}
 \format{
-A list with results from \code{mme()}, including the following components:
+A list with results from \code{sme()}, including the following components:
 \describe{
 \item{\code{summary}}{A data frame summarizing the analysis results, including
 p-values for SNP associations (\code{p}).}
@@ -25,7 +25,7 @@ data("getting_started")
 }
 \description{
 \code{getting_started} is a simulated dataset created to demonstrate the use of
-the \code{mme()} function for genome-wide interaction analyses. It contains
+the \code{sme()} function for genome-wide interaction analyses. It contains
 results from a simulated analysis involving additive genetic effects and
 gene-by-gene (GxG) interactions.
 }
@@ -44,7 +44,7 @@ interactions.
 The simulated data was saved in PLINK-compatible \code{.bed}, \code{.fam},
 and \code{.bim} files.
 \item \strong{Interaction Analysis}:
-The \code{mme()} function was used to perform genome-wide interaction analyses
+The \code{sme()} function was used to perform genome-wide interaction analyses
 on a subset of SNP indices, including the GxG SNP groups and 100 additional
 additive SNPs. Memory-efficient computation parameters
 (e.g., \code{chun_ksize}, \code{n_randvecs}, and \code{n_blocks}) were applied.
@@ -72,6 +72,6 @@ head(getting_started$summary)
 
 }
 \seealso{
-\link[mme]{mme}
+\link[sme]{sme}
 }
 \keyword{datasets}
