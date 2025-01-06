@@ -2,7 +2,7 @@
 % Please edit documentation in R/approximate_memory_requirements.R
 \name{approximate_memory_requirements}
 \alias{approximate_memory_requirements}
-\title{Estimate Memory Requirements for MME Routine}
+\title{Estimate Memory Requirements for SME Routine}
 \usage{
 approximate_memory_requirements(
   n_samples,
@@ -27,16 +27,16 @@ trace estimation. Affects memory for operations involving random vectors.}
 }
 \value{
 Numeric. The approximate memory requirement (in gigabytes) for the
-MME routine.
+SME routine.
 }
 \description{
 This function provides an approximate estimate of the memory requirements
-(in gigabytes) for running the Multimodal Marginal Epistasis (MME) routine
+(in gigabytes) for running the Sparse Marginal Epistasis (SME) routine
 based on input parameters such as the number of samples, SNPs, and other configurations.
 }
 \details{
 The function calculates memory usage by summing the contributions from
-various components used in the MME routine, including:
+various components used in the SME routine, including:
 \itemize{
 \item Variance component estimates (\code{vc_estimates})
 \item Phenotype-related matrices
@@ -55,10 +55,10 @@ n_snps <- 1e6
 n_blocks <- 100
 n_randvecs <- 100
 chunksize <- 10
-approximate_memory_requirements(n_samples, 
-                                n_snps, 
-                                n_blocks, 
-                                n_randvecs, 
+approximate_memory_requirements(n_samples,
+                                n_snps,
+                                n_blocks,
+                                n_randvecs,
                                 chunksize)
 
 }

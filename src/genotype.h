@@ -1,7 +1,7 @@
 #pragma once
 #ifndef GENOTYPE_H
 #define GENOTYPE_H
-#include "mme.h"
+#include "sme.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>

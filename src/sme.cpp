@@ -1,12 +1,12 @@
-/**  mmer: An R Package implementation of the Multimodal Marginal Epistasis test
+/**  sme: An R Package implementation of the Sparse Marginal Epistasis test
  * with Rcpp Copyright (C) 2024  Julian Stamp This code is licensed under MIT
  * license (see LICENSE.md for details)
- * 
- * @brief C++ routine of the Multimodal Marginal Epistasis (MME) test.
  *
- * This function implements the Multimodal Marginal Epistasis test using OpenMP for 
- * parallel processing, Rcpp to interface with R, and Eigen for matrix operations. 
- * It processes genotype and phenotype data to compute variance components 
+ * @brief C++ routine of the Sparse Marginal Epistasis (SME) test.
+ *
+ * This function implements the Sparse Marginal Epistasis test using OpenMP for
+ * parallel processing, Rcpp to interface with R, and Eigen for matrix operations.
+ * It processes genotype and phenotype data to compute variance components
  * and epistatic interactions, enabling statistical inference in genetic studies.
  *
  * @param plink_file The base path to PLINK binary files (without extensions) containing genotype data.
@@ -19,7 +19,7 @@
  * @param n_threads The number of threads to use for parallel computation.
  * @param gxg_h5_dataset The HDF5 dataset path for gene-gene interaction data.
  * @param ld_h5_dataset The HDF5 dataset path for linkage disequilibrium data.
- * @return An Rcpp::List containing the estimated variance components, their standard errors, and 
+ * @return An Rcpp::List containing the estimated variance components, their standard errors, and
  *         additional metrics for epistatic interactions.
  *
  * The returned list includes:
@@ -27,7 +27,7 @@
  * - `covariance_matrix`: The covariance matrix of the estimates.
  * - `additional_metrics`: Intermediate statistics computed during the analysis.
  *
- * @note 
+ * @note
  * - Requires PLINK binary files (.bim, .bed, .fam) for genotype data.
  * - The phenotype file should be in a plain-text format compatible with the function.
  * - Utilizes OpenMP for parallelism; ensure OpenMP is supported on your platform.
@@ -47,13 +47,13 @@
 #include "compute_mom_components.h"
 #include "count_data.h"
 #include "initialize_random_vectors.h"
-#include "mme.h"
+#include "sme.h"
 #include "read_genotype_mask.h"
 #include "read_genotypes.h"
 #include "read_phenotypes.h"
 
 // [[Rcpp::export]]
-Rcpp::List mme_cpp(std::string plink_file, std::string pheno_file,
+Rcpp::List sme_cpp(std::string plink_file, std::string pheno_file,
                    std::string genotype_mask_file, int n_randvecs, int n_blocks,
                    int rand_seed, std::vector<int> gxg_indices, int n_threads,
                    std::string gxg_h5_dataset, std::string ld_h5_dataset) {

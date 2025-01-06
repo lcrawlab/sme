@@ -1,29 +1,29 @@
-#' Multimodal Marginal Epistasis Test (MME) 
+#' Sparse Marginal Epistasis Test (SME)
 #'
-#' MME fits a linear mixed model in order to test for marginal epistasis. It 
+#' SME fits a linear mixed model in order to test for marginal epistasis. It
 #' concentrates the scans for epistasis to regions of the genome that have known
 #' functional enrichment for a trait of interest.
-#' 
-#' @references Stamp, J., Pattillo Smith, S., Weinreich, D., & Crawford, L. (2024). 
-#' Integration of functional genomic maps enables genome-wide detection of 
-#' epistasis in human complex traits. 
-#' bioRxiv.
-#' @references Stamp, J., DenAdel, A., Weinreich, D., & Crawford, L. (2023). 
-#' Leveraging the genetic correlation between traits improves the detection of 
-#' epistasis in genome-wide association studies. 
-#' G3: Genes, Genomes, Genetics, 13(8), jkad118.
-#' @references Crawford, L., Zeng, P., Mukherjee, S., & Zhou, X. (2017). 
-#' Detecting epistasis with the marginal epistasis test in genetic mapping 
-#' studies of quantitative traits. PLoS genetics, 13(7), e1006869.
-#' 
 #'
-#' @param plink_file Character. File path to the PLINK dataset 
-#'   (without *.bed extension). 
+#' @references Stamp, J., Pattillo Smith, S., Weinreich, D., & Crawford, L. (2024).
+#' Integration of functional genomic maps enables genome-wide detection of
+#' epistasis in human complex traits.
+#' bioRxiv.
+#' @references Stamp, J., DenAdel, A., Weinreich, D., & Crawford, L. (2023).
+#' Leveraging the genetic correlation between traits improves the detection of
+#' epistasis in genome-wide association studies.
+#' G3: Genes, Genomes, Genetics, 13(8), jkad118.
+#' @references Crawford, L., Zeng, P., Mukherjee, S., & Zhou, X. (2017).
+#' Detecting epistasis with the marginal epistasis test in genetic mapping
+#' studies of quantitative traits. PLoS genetics, 13(7), e1006869.
+#'
+#'
+#' @param plink_file Character. File path to the PLINK dataset
+#'   (without *.bed extension).
 #'   The function will append `.bim`, `.bed`, and `.fam` extensions
 #'   automatically.
 #'   The genotype data must not have any missing genotypes. Use PLINK to remove
 #'   variants with missing genotypes or impute them.
-#' @param pheno_file Character. File path to a phenotype file in PLINK format. 
+#' @param pheno_file Character. File path to a phenotype file in PLINK format.
 #'   The file should contain exactly one phenotype column.
 #' @param mask_file Character or NULL. File path to an HDF5 file specifying
 #'   per-SNP masks for gene-by-gene interaction tests. This file informs which
@@ -34,24 +34,24 @@
 #'   If `NULL`, all SNPs in the dataset will be tested.
 #'   These indices are **1-based**.
 #' @param chunk_size Integer or NULL. Number of SNPs processed per chunk.
-#'   This influences memory 
+#'   This influences memory
 #'   usage and can be left `NULL` to automatically determine the chunk size
 #'   based on `gxg_indices` and number of threads.
 #' @param n_randvecs Integer. Number of random vectors used for stochastic trace
-#'   estimation. 
+#'   estimation.
 #'   Higher values yield more accurate estimates but increase computational
 #'   cost. Default is 10.
 #' @param n_blocks Integer. Number of blocks into which SNPs are divided for
-#'   processing. 
+#'   processing.
 #'   This parameter affects memory requirements. Default is 100.
 #' @param n_threads Integer. Number of threads for OpenMP parallel processing.
 #'   Default is 1.
 #' @param gxg_h5_group Character. Name of the HDF5 group within the mask file
-#'   containing gene-by-gene 
+#'   containing gene-by-gene
 #'   interaction masks. SNPs in this group will be included in the gene-by-gene
 #'   interactions. Defaults to "gxg".
 #' @param ld_h5_group Character. Name of the HDF5 group within the mask file
-#'   containing linkage disequilibrium 
+#'   containing linkage disequilibrium
 #'   masks. SNPs in this group are excluded from analysis. Defaults to "ld".
 #' @param rand_seed Integer. Seed for random vector generation. If `-1`, no seed
 #'   is set. Default is -1.
@@ -74,22 +74,22 @@
 #'   - `average_duration`: Average computation time per SNP.
 #'
 #' @details
-#' This function integrates PLINK-formatted genotype and phenotype data to 
+#' This function integrates PLINK-formatted genotype and phenotype data to
 #' perform marginal epistasis tests on a set of SNPs. Using stochastic trace
 #' estimation, the method computes variance components for gene-by-gene
 #' interaction and genetic relatedness using the MQS estimator. The process is
 #' parallelized using OpenMP when `n_threads > 1`.
 #'
-#' The memory requirements and computation time scaling can be optimized through 
+#' The memory requirements and computation time scaling can be optimized through
 #' the parameters `chunk_size`, `n_randvecs`, and `n_blocks`.
-#' 
+#'
 #' **Mask Format Requirements**
 #'
 #' The mask file format is an HDF5 file used for storing index data for
 #' the masking process. This format supports data retrieval by index.
 #' Below are the required groups and datasets within the HDF5 file:
 #'
-#' The required group names can be configured as input parameters. 
+#' The required group names can be configured as input parameters.
 #' The defaults are described below.
 #'
 #' - **Groups**:
@@ -97,16 +97,16 @@
 #'   - `gxg`: Stores indices of SNPs that the marginal epistasis test is conditioned on. These SNPs will be **included**.
 #'
 #' - **Datasets**:
-#'   - `ld/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs 
+#'   - `ld/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs
 #'     in the same LD block as that SNP. These SNPs will be **excluded** from the gene-by-gene interaction covariance matrix.
-#'   - `gxg/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs to **include** in the 
+#'   - `gxg/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs to **include** in the
 #'     the gene-by-gene interaction covariance matrix for focal SNP `<j>`.
 #'
-#' **Important**: All indices in the mask file data are **zero-based**, matching the zero-based indices of the PLINK `.bim` file. 
+#' **Important**: All indices in the mask file data are **zero-based**, matching the zero-based indices of the PLINK `.bim` file.
 #'
 #' @examples
-#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package="mmer"))
-#' pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="mmer")
+#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package="sme"))
+#' pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
 #' mask_file <- ""
 #'
 #' # Parameter inputs
@@ -119,7 +119,7 @@
 #' n_snps <- 100
 #' snp_indices <- 1:n_snps
 #'
-#' mme_result <- mme(
+#' sme_result <- sme(
 #'   plink_file,
 #'   pheno_file,
 #'   mask_file,
@@ -129,9 +129,9 @@
 #'   n_blocks,
 #'   n_threads
 #' )
-#' head(mme_result$summary)
+#' head(sme_result$summary)
 #'
-#' @useDynLib mmer
+#' @useDynLib sme
 #' @import Rcpp
 #' @import RcppEigen
 #' @import dplyr
@@ -139,7 +139,7 @@
 #' @importFrom tidyr pivot_longer
 #' @importFrom utils read.delim
 #' @export
-mme <-
+sme <-
   function(plink_file,
            pheno_file,
            mask_file = NULL,
@@ -154,7 +154,7 @@ mme <-
            log_level = "WARNING") {
     logging::logReset()
     logging::basicConfig(level = log_level)
-    log <- logging::getLogger("mme")
+    log <- logging::getLogger("sme")
 
     n_gxg_indices <- length(gxg_indices)
     log$debug("Number of gxg indices: %d", n_gxg_indices)
@@ -211,7 +211,7 @@ mme <-
     for (i in seq_along(chunks)) {
       chunk <- chunks[[i]]
       result <-
-        mme_cpp(
+        sme_cpp(
           plink_file,
           pheno_file,
           mask_file,

@@ -1,7 +1,7 @@
-#ifndef MMER_TESTING_UTILS_H
-#define MMER_TESTING_UTILS_H
+#ifndef SME_TESTING_UTILS_H
+#define SME_TESTING_UTILS_H
 
-#endif // MMER_TESTING_UTILS_H
+#endif // SME_TESTING_UTILS_H
 
 #include "allocate_memory.h"
 #include "computation.h"
@@ -9,7 +9,7 @@
 #include "compute_mom_components.h"
 #include "genotype.h"
 #include "initialize_random_vectors.h"
-#include "mme.h"
+#include "sme.h"
 #include "read_genotype_mask.h"
 #include "read_genotypes.h"
 #include "read_phenotypes.h"

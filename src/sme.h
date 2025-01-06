@@ -28,7 +28,7 @@
 typedef Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor>
     MatrixXdr;
 
-Rcpp::List mme_cpp(std::string plink_file, std::string pheno_file,
+Rcpp::List sme_cpp(std::string plink_file, std::string pheno_file,
                    std::string genotype_mask_file, int n_randvecs, int n_blocks,
                    int rand_seed, std::vector<int> gxg_indices, int n_threads,
                    std::string gxg_h5_dataset, std::string ld_h5_dataset);

@@ -2,7 +2,7 @@
 #include <highfive/H5Easy.hpp>
 #include <string>
 
-#include "mme.h"
+#include "sme.h"
 
 void read_genotype_mask(const std::string &genotype_mask_file, int n_snps,
                         int gxg_i, const std::string &gxg_h5_dataset,

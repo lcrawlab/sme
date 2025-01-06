@@ -13,10 +13,10 @@
 #include "count_data.h"
 #include "genotype.h"
 #include "read_genotypes.h"
-#ifndef MMER_SIMULATE_TRAITS_H
-#define MMER_SIMULATE_TRAITS_H
+#ifndef SME_SIMULATE_TRAITS_H
+#define SME_SIMULATE_TRAITS_H
 
-#endif // MMER_SIMULATE_TRAITS_H
+#endif // SME_SIMULATE_TRAITS_H
 
 std::vector<int> draw_random_ints(std::vector<int> numbers, int x);
 

@@ -15,19 +15,19 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(mmer)
+library(sme)
 ```
 
 
-The Multimodal Marginal Epistasis test (MME) requires a HDF5 file containing
+The Sparse Marginal Epistasis test (SME) requires a HDF5 file containing
 binary masking data. The effectiveness of the test relies on how informative the
 mask is for a specific trait. For instance, to test for marginal epistasis
 related to transcriptional activity, DNase I hypersensitivity sites data can be
 used to condition the detection on accessible chromatin regions.
 
-<img src="../reference/figures/mme-schematic-dhs.png"
+<img src="../reference/figures/sme-schematic-dhs.png"
 width="100%"
-alt="Multimodal Marginal Epistasis test (MME) schematic DHS data" />
+alt="Sparse Marginal Epistasis test (SME) schematic DHS data" />
 **Figure 1.** The illustration shows open chromatin data. DNase I hypersensitive
 sites indicate transcriptional activity. The DNase-seq signal is converted to a
 binary mask, where genetic variants in inaccessible chromatin regions are
@@ -36,7 +36,7 @@ excluded from the covariance matrix for marginal epistasis.
 
 ## Mask File Format
 
-The `mme()` function expects the mask data to be in an HDF5 file. The HDF5
+The `sme()` function expects the mask data to be in an HDF5 file. The HDF5
 format includes two primary object types:
 
 - Datasets - typed multidimensional arrays
@@ -53,15 +53,15 @@ The mask data should be organized into the following groups and datasets:
 - `gxg`: Contains indices of SNPs used to condition the marginal epistasis test,
   which will be **included**.
 
-The required group names can be configured as input parameters of `mme()`. 
+The required group names can be configured as input parameters of `sme()`.
 The defaults are `ld` and `gxg`.
 
 **Datasets**:
 
 - `ld/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs in
-  the same LD block as that SNP. These SNPs will be **excluded** from the 
+  the same LD block as that SNP. These SNPs will be **excluded** from the
   gene-by-gene interaction covariance matrix.
-- `gxg/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs to 
+- `gxg/<j>`: For each focal SNP `<j>`, this dataset contains indices of SNPs to
   **include** in the the gene-by-gene interaction covariance matrix for focal
   SNP `<j>`.
 
@@ -70,13 +70,13 @@ correspond to the zero-based row indices of the PLINK `.bim` file. This includes
 the dataset index (`<j>` in `gxg/<j>`) and the data itself.
 This zero-based indexing is necessary because the mask data is read by a C++
 subroutine in
-`mme()`, which uses zero-based indexing, unlike R's one-based indexing for SNP
+`sme()`, which uses zero-based indexing, unlike R's one-based indexing for SNP
 indices in the function call.
 
 ## Creating and Using Mask Files
 
 The package provides utility functions to create, write, and read valid mask
-files for `mme()`.
+files for `sme()`.
 
 
 ```{r}

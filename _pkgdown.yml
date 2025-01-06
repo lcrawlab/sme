@@ -1,4 +1,4 @@
-url: https://lcrawlab.github.io/mmer/
+url: https://lcrawlab.github.io/sme/
 
 template:
   bootstrap: 5
@@ -13,11 +13,11 @@ template:
       <script defer data-domain="pkgdown.r-lib.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
 
 reference:
-- title: "Multimodal Marginal Epistasis Analysis"
+- title: "Sparse Marginal Epistasis Analysis"
   desc: >
     Functions for the marginal epistasis analysis.
   contents:
-  - mme
+  - sme
 - title: "Simulate Quantitative Traits"
   desc: >
     Functions for simulating quantitative traits with pairwise epistasis.
@@ -31,7 +31,7 @@ reference:
   - create_hdf5_file
   - read_hdf5_dataset
   - write_hdf5_dataset
-  
+
 - title: "Simulated Data Examples"
   desc: "RDA data files for illustration purposes."
   contents:

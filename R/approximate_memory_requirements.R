@@ -1,31 +1,31 @@
-#' Estimate Memory Requirements for MME Routine
+#' Estimate Memory Requirements for SME Routine
 #'
-#' This function provides an approximate estimate of the memory requirements 
-#' (in gigabytes) for running the Multimodal Marginal Epistasis (MME) routine 
+#' This function provides an approximate estimate of the memory requirements
+#' (in gigabytes) for running the Sparse Marginal Epistasis (SME) routine
 #' based on input parameters such as the number of samples, SNPs, and other configurations.
 #'
 #' @param n_samples Integer. The number of samples in the dataset.
 #' @param n_snps Integer. The total number of SNPs in the dataset.
-#' @param n_blocks Integer. The number of genotype blocks used to partition SNPs. 
+#' @param n_blocks Integer. The number of genotype blocks used to partition SNPs.
 #'   Affects the size of encoded genotype segments.
-#' @param n_randvecs Integer. The number of random vectors used for stochastic 
+#' @param n_randvecs Integer. The number of random vectors used for stochastic
 #'   trace estimation. Affects memory for operations involving random vectors.
 #' @param chunksize Integer. The number of focal SNPs processed per chunk.
 #'
 #' @return Numeric. The approximate memory requirement (in gigabytes) for the
-#' MME routine.
+#' SME routine.
 #'
 #' @details
-#' The function calculates memory usage by summing the contributions from 
-#' various components used in the MME routine, including:
+#' The function calculates memory usage by summing the contributions from
+#' various components used in the SME routine, including:
 #' - Variance component estimates (`vc_estimates`)
 #' - Phenotype-related matrices
 #' - Random vector-based computations
 #' - Genotype objects and block statistics
 #' - Gene-by-gene interaction masks
 #'
-#' The estimated memory requirement is derived from the data dimensions 
-#' and operational needs, and it provides a guideline for configuring resources 
+#' The estimated memory requirement is derived from the data dimensions
+#' and operational needs, and it provides a guideline for configuring resources
 #' for the analysis.
 #'
 #' @examples
@@ -34,10 +34,10 @@
 #' n_blocks <- 100
 #' n_randvecs <- 100
 #' chunksize <- 10
-#' approximate_memory_requirements(n_samples, 
-#'                                 n_snps, 
-#'                                 n_blocks, 
-#'                                 n_randvecs, 
+#' approximate_memory_requirements(n_samples,
+#'                                 n_snps,
+#'                                 n_blocks,
+#'                                 n_randvecs,
 #'                                 chunksize)
 #'
 #' @export
@@ -60,7 +60,7 @@ approximate_memory_requirements <- function(n_samples,
   # collect_XXy - Matrix: (n_samples, 1)
   # collect_Gy - Matrix: (n_samples, n_gxg_idx)
   # focal_snps_matrix - Matrix: (n_samples, n_gxg_idx)
-  # collect_XXUy - Matrix: (n_samples, 
+  # collect_XXUy - Matrix: (n_samples,
   #       (n_variance_components + 1) * (n_variance_components + 1) * n_gxg_idx)
   phenotype_like <- n_samples * (6 + 2 * chunksize + 9 * chunksize)
 
@@ -97,11 +97,11 @@ approximate_memory_requirements <- function(n_samples,
   #
   # these are so small they can be neglected
 
-  total <-  vc_estimates + 
-            phenotype_like + 
-            randomvec_like + 
-            gt_objects + 
-            block_stats + 
+  total <-  vc_estimates +
+            phenotype_like +
+            randomvec_like +
+            gt_objects +
+            block_stats +
             mask
   return(total * 8 / 1024 / 1024 / 1024)
 }

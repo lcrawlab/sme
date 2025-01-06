@@ -1,5 +1,5 @@
 #pragma once
-#include "mme.h"
+#include "sme.h"
 
 MatrixXdr compute_XXz(const MatrixXdr &Z_b, const MatrixXdr &phenotype_mask,
                       const int &n_randvecs, const genotype &genotype_block);

@@ -1,4 +1,4 @@
-#include "mme.h"
+#include "sme.h"
 #include <RcppEigen.h>
 #include <fstream>
 

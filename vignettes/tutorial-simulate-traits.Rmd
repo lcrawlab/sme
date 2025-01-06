@@ -11,13 +11,13 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  message = FALSE, 
+  message = FALSE,
   warning = FALSE
 )
 ```
 
 ```{r setup}
-library(mmer)
+library(sme)
 library(genio)
 ```
 
@@ -72,7 +72,7 @@ write_plink(
 
 
 To simulate traits, we need to specify the genetic architecture. E.g., the
-function requires us to specify 
+function requires us to specify
 
 - the narrow sense heritability $h^2$
 - the indices SNPs contributing to the narrow sense heritability
@@ -90,7 +90,7 @@ n_snps_gxg_group <- 5
 n_snps_additive <- 100
 additive_snps <- sort(sample(1:n_snps, n_snps_additive, replace = F))
 gxg_group_1 <- sort(sample(additive_snps, n_snps_gxg_group, replace = F))
-gxg_group_2 <- sort(sample(setdiff(additive_snps, gxg_group_1), 
+gxg_group_2 <- sort(sample(setdiff(additive_snps, gxg_group_1),
                            n_snps_gxg_group, replace = F))
 
 simulate_traits(
@@ -105,7 +105,7 @@ simulate_traits(
 ```
 
 The variance components of the traits are constructed to match the input.
-See Crawford et al. (2017) and 
+See Crawford et al. (2017) and
 [mvMAPIT Documentation: Simulate Traits](https://lcrawlab.github.io/mvMAPIT/articles/tutorial-simulations.html)
 for a full description of the simulation scheme.
 
