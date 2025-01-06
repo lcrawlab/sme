@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>The Multimodal Marginal Epistasis Test • mmer</title>
+<title>The Sparse Marginal Epistasis Test • sme</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -16,10 +16,10 @@
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="The Multimodal Marginal Epistasis Test">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="The Sparse Marginal Epistasis Test">
 <meta name="description" content="A computationally efficient genetics method which detects statistical epistasis in complex traits.">
 <meta property="og:description" content="A computationally efficient genetics method which detects statistical epistasis in complex traits.">
-<meta property="og:image" content="https://lcrawlab.github.io/mmer/logo.png">
+<meta property="og:image" content="https://lcrawlab.github.io/sme/logo.png">
 <script defer data-domain="pkgdown.r-lib.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
 </head>
 <body>
@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">mmer</a>
+    <a class="navbar-brand me-2" href="index.html">sme</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
@@ -39,7 +39,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="articles/mmer.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/sme.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -48,7 +48,7 @@
     <li><h6 class="dropdown-header" data-toc-skip>Tutorials</h6></li>
     <li><a class="dropdown-item" href="articles/tutorial-cite-us.html">How To Cite Our Work</a></li>
     <li><a class="dropdown-item" href="articles/tutorial-create-mask-file.html">How To Create a Mask File</a></li>
-    <li><a class="dropdown-item" href="articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of MME</a></li>
+    <li><a class="dropdown-item" href="articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of SME</a></li>
     <li><a class="dropdown-item" href="articles/tutorial-simulate-traits.html">How To Simulate Traits</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><h6 class="dropdown-header" data-toc-skip>Studies</h6></li>
@@ -61,7 +61,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/lcrawlab/mmer/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/lcrawlab/sme/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
@@ -79,12 +79,12 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header">
-<img src="logo.png" class="logo" alt=""><h1 id="the-multimodal-marginal-epistasis-test-">The Multimodal Marginal Epistasis test <a class="anchor" aria-label="anchor" href="#the-multimodal-marginal-epistasis-test-"></a>
+<img src="logo.png" class="logo" alt=""><h1 id="the-sparse-marginal-epistasis-test-">The Sparse Marginal Epistasis test <a class="anchor" aria-label="anchor" href="#the-sparse-marginal-epistasis-test-"></a>
 </h1>
 </div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The <code>mmer</code> package implements a computationally and statistically efficient method for detecting marginal epistasis in genome-wide association studies (GWAS). Find the full package documentation including examples and articles here: <a href="https://lcrawlab.github.io/mmer/">Multimodal Marginal Epistasis test Documentation</a>.</p>
+<p>The <code>sme</code> package implements a computationally and statistically efficient method for detecting marginal epistasis in genome-wide association studies (GWAS). Find the full package documentation including examples and articles here: <a href="https://lcrawlab.github.io/sme/">Sparse Marginal Epistasis test Documentation</a>.</p>
 <div class="section level2">
 <h2 id="key-features">Key Features<a class="anchor" aria-label="anchor" href="#key-features"></a>
 </h2>
@@ -93,17 +93,17 @@
 <li>Mailman algorithm: fast vector-by-matrix operation</li>
 <li>Linear mixed model: controls for population structure</li>
 <li>Multimodal Input: incorporates additional data from HDF5 files to improve power in detecting gene-by-gene interactions.</li>
-<li>Optimize for Memory Constraints: Highly configurable block wise processing of the data allows to make the most of available resources. See also <a href="articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of MME</a>.</li>
+<li>Optimize for Memory Constraints: Highly configurable block wise processing of the data allows to make the most of available resources. See also <a href="articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of SME</a>.</li>
 <li>Parallelization: Utilizes OpenMP for multi-threaded processing.</li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of mmer from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of sme from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lcrawlab/mmer"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lcrawlab/sme"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="dependencies">Dependencies<a class="anchor" aria-label="anchor" href="#dependencies"></a>
@@ -120,7 +120,7 @@
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://bioconductor.github.io/BiocManager/" class="external-link">"BiocManager"</a></span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
 <span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="st">"Rhdf5lib"</span><span class="op">)</span></span></code></pre></div>
-<p>The full list of R dependencies can be found in the <a href="https://github.com/lcrawlab/mmer/blob/main/DESCRIPTION" class="external-link">DESCRIPTION file</a>.</p>
+<p>The full list of R dependencies can be found in the <a href="https://github.com/lcrawlab/sme/blob/main/DESCRIPTION" class="external-link">DESCRIPTION file</a>.</p>
 <div class="section level3">
 <h3 id="openmp">OpenMP<a class="anchor" aria-label="anchor" href="#openmp"></a>
 </h3>
@@ -186,8 +186,9 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/lcrawlab/mmer/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/lcrawlab/mmer/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://cloud.r-project.org/package=sme" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/lcrawlab/sme/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/lcrawlab/sme/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -203,7 +204,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing mmer</a></li>
+<li><a href="authors.html#citation">Citing sme</a></li>
 </ul>
 </div>
 
