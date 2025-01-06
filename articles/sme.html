@@ -88,7 +88,7 @@
 
     
     
-<p>The multimodal marginal epistasis (SME) test performs a genome-wide
+<p>The sparse marginal epistasis (SME) test performs a genome-wide
 search for SNPs involved in genetic interactions while conditioning on
 information derived from functional genomic data.</p>
 <p>By examining one SNP at a time, SME fits a linear mixed model to test
@@ -211,7 +211,7 @@ real effects.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Position"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"Epistatic SNP"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="sme_files/figure-html/manhattan_plot-1.png" alt="Manhattan plot to illustrate the multimodal marginal epistasis test" width="700"></p>
+<p><img src="sme_files/figure-html/manhattan_plot-1.png" alt="Manhattan plot to illustrate the sparse marginal epistasis test" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="understanding-variance-components-and-effect-sizes">Understanding Variance Components and Effect Sizes<a class="anchor" aria-label="anchor" href="#understanding-variance-components-and-effect-sizes"></a>
@@ -240,7 +240,7 @@ actual effect sizes.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Epistatic SNP"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Phenotypic Variance Explained"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="sme_files/figure-html/pve_plot-1.png" alt="PVE plot to illustrate the multimodal marginal epistasis test" width="700"></p>
+<p><img src="sme_files/figure-html/pve_plot-1.png" alt="PVE plot to illustrate the sparse marginal epistasis test" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="narrow-sense-heritability-estimates">Narrow Sense Heritability Estimates<a class="anchor" aria-label="anchor" href="#narrow-sense-heritability-estimates"></a>
@@ -274,7 +274,7 @@ variation.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Component"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Variance Component Estimate"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="sme_files/figure-html/h2_plot-1.png" alt="h2 plot to illustrate the multimodal marginal epistasis test" width="700"></p>
+<p><img src="sme_files/figure-html/h2_plot-1.png" alt="h2 plot to illustrate the sparse marginal epistasis test" width="700"></p>
 <p>The estimate of the narrow-sense heritability
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>h</mi><mn>2</mn></msup><annotation encoding="application/x-tex">h^2</annotation></semantics></math>
 is much less variable because it is always informed by the same genetic
