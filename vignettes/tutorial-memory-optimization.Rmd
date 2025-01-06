@@ -72,7 +72,7 @@ alt="Sparse Marginal Epistasis test (SME) schematic pseudo-random vectors"/>
 from sharing random vectors.
 **(a)** In the randomized trace estimates we can identify reusable matrix by
 vector products. Computing the exact trace of a product of two covariance
-matrices is prohibitively computationally expensive. Instead, the multimodal
+matrices is prohibitively computationally expensive. Instead, the sparse
 marginal epistasis (SME) test approximates the traces using random vectors $z$.
 For the full MQS computation of the point estimates of the variance components,
 we see that the matrix-by-vector products of the form $Az$ with $A \in \{K, G\}$
