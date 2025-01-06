@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<!-- You'll still need to render `README.Rmd` regularly, to keep `README.md` 
-up-to-date. 
+<!-- You'll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date.
 `devtools::build_readme()` is handy for this. -->
 
 # The Sparse Marginal Epistasis test <img src="man/figures/logo.png" align="right" height="200" alt="" />
@@ -12,8 +12,8 @@ up-to-date.
 The `sme` package implements a computationally and statistically
 efficient method for detecting marginal epistasis in genome-wide
 association studies (GWAS). Find the full package documentation
-including examples and articles here: [Sparse Marginal Epistasis
-test Documentation](https://lcrawlab.github.io/sme/).
+including examples and articles here: [Sparse Marginal Epistasis test
+Documentation](https://lcrawlab.github.io/sme/).
 
 ## Key Features
 
@@ -65,9 +65,9 @@ file](https://github.com/lcrawlab/sme/blob/main/DESCRIPTION).
 For OS X and Linux, the OpenMP library can be installed via one of the
 (shell) commands specified below:
 
-| System | Command |
-|:---|:---|
-| **OS X (using Homebrew)** | `brew install libomp` |
+| System                                      | Command                           |
+|:--------------------------------------------|:----------------------------------|
+| **OS X (using Homebrew)**                   | `brew install libomp`             |
 | **Debian-based systems (including Ubuntu)** | `sudo apt-get install libomp-dev` |
 
 To enable openMP, it may be necessary to configure the compiler flags

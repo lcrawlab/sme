@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The multimodal marginal epistasis (SME) test performs a genome-wide search for
+The sparse marginal epistasis (SME) test performs a genome-wide search for
 SNPs involved in genetic interactions while conditioning on information derived
 from functional genomic data.
 
@@ -136,7 +136,7 @@ true causal SNPs (Single Nucleotide Polymorphisms) in green on the
 plot - these are the genetic variants we included in our simulation as having
 real effects.
 
-```{r manhattan_plot, fig.alt="Manhattan plot to illustrate the multimodal marginal epistasis test"}
+```{r manhattan_plot, fig.alt="Manhattan plot to illustrate the sparse marginal epistasis test"}
 sme_result$summary %>%
   ggplot(aes(
   x = index,
@@ -164,7 +164,7 @@ interactions
 The dashed line marks the true 5% PVE level we used in the simulation, allowing
 you to see how accurately the method estimated the actual effect sizes.
 
-```{r pve_plot, fig.alt="PVE plot to illustrate the multimodal marginal epistasis test"}
+```{r pve_plot, fig.alt="PVE plot to illustrate the sparse marginal epistasis test"}
 sme_result$summary %>%
   ggplot(aes(x = true_gxg_snp, y = pve, fill = true_gxg_snp)) +
   geom_boxplot() +
@@ -194,7 +194,7 @@ dashed line in the plot. This reference line helps you evaluate how accurately
 SME estimated the genetic components of trait variation.
 
 
-```{r h2_plot, fig.alt="h2 plot to illustrate the multimodal marginal epistasis test"}
+```{r h2_plot, fig.alt="h2 plot to illustrate the sparse marginal epistasis test"}
 sme_result$vc_estimate %>%
   ggplot(aes(x = component, y = vc_estimate, fill = component)) +
   geom_boxplot() +
