@@ -82,16 +82,14 @@
       <img src="../logo.png" class="logo" alt=""><h1>How To Create a Mask File</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/lcrawlab/sme/blob/main/vignettes/tutorial-create-mask-file.Rmd" class="external-link"><code>vignettes/tutorial-create-mask-file.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/lcrawlab/sme/blob/v0.0.1/vignettes/tutorial-create-mask-file.Rmd" class="external-link"><code>vignettes/tutorial-create-mask-file.Rmd</code></a></small>
       <div class="d-none name"><code>tutorial-create-mask-file.Rmd</code></div>
     </div>
 
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lcrawlab/sme" class="external-link">sme</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Error in get(paste0(generic, ".", class), envir = get_method_env()) : </span></span>
-<span><span class="co">#&gt;   object 'type_sum.accel' not found</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lcrawlab/sme" class="external-link">sme</a></span><span class="op">)</span></span></code></pre></div>
 <p>The Sparse Marginal Epistasis test (SME) requires a HDF5 file
 containing binary masking data. The effectiveness of the test relies on
 how informative the mask is for a specific trait. For instance, to test
@@ -235,12 +233,12 @@ valid mask files for <code><a href="../reference/sme.html">sme()</a></code>.</p>
 <span><span class="co">#&gt; [16] generics_0.1.3      RcppEigen_0.3.4.0.2 knitr_1.49         </span></span>
 <span><span class="co">#&gt; [19] genio_1.1.2         iterators_1.0.14    backports_1.5.0    </span></span>
 <span><span class="co">#&gt; [22] checkmate_2.3.2     tibble_3.2.1        desc_1.4.3         </span></span>
-<span><span class="co">#&gt; [25] bslib_0.8.0         pillar_1.10.0       rlang_1.1.4        </span></span>
-<span><span class="co">#&gt; [28] cachem_1.1.0        xfun_0.49           fs_1.6.5           </span></span>
+<span><span class="co">#&gt; [25] bslib_0.8.0         pillar_1.10.1       rlang_1.1.4        </span></span>
+<span><span class="co">#&gt; [28] cachem_1.1.0        xfun_0.50           fs_1.6.5           </span></span>
 <span><span class="co">#&gt; [31] sass_0.4.9          cli_3.6.3           pkgdown_2.1.1      </span></span>
 <span><span class="co">#&gt; [34] magrittr_2.0.3      digest_0.6.37       mvMAPIT_2.0.3      </span></span>
-<span><span class="co">#&gt; [37] foreach_1.5.2       mvtnorm_1.3-2       lifecycle_1.0.4    </span></span>
-<span><span class="co">#&gt; [40] CompQuadForm_1.4.3  vctrs_0.6.5         evaluate_1.0.1     </span></span>
+<span><span class="co">#&gt; [37] foreach_1.5.2       mvtnorm_1.3-3       lifecycle_1.0.4    </span></span>
+<span><span class="co">#&gt; [40] CompQuadForm_1.4.3  vctrs_0.6.5         evaluate_1.0.3     </span></span>
 <span><span class="co">#&gt; [43] glue_1.8.0          codetools_0.2-20    ragg_1.3.3         </span></span>
 <span><span class="co">#&gt; [46] purrr_1.0.2         rmarkdown_2.29      tools_4.4.2        </span></span>
 <span><span class="co">#&gt; [49] pkgconfig_2.0.3     htmltools_0.5.8.1</span></span></code></pre></div>
