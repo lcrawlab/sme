@@ -132,7 +132,6 @@
 #'
 #' @useDynLib smer
 #' @import Rcpp
-#' @import RcppEigen
 #' @import dplyr
 #' @importFrom stats pnorm
 #' @importFrom tidyr pivot_longer
