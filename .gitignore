@@ -63,3 +63,5 @@ src/runner.cpp
 src/compile-runner.sh
 Rprof.out
 inst/doc
+
+pkgdown/

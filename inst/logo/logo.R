@@ -9,7 +9,7 @@ r <- hexSticker::sticker(
   s_y = 1.25,
   s_width = 1.25,
   s_height = 1.25,
-  package = "sme",
+  package = "SME",
   p_x = 1,
   p_y = 0.6,
   p_size = 25,

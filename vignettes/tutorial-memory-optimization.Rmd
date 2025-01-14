@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(sme)
+library(smer)
 library(tidyr)
 library(dplyr)
 library(knitr)
@@ -66,7 +66,7 @@ For each set of SNPs analyzed together (in a "chunk"), intermediate results must
 be stored. Consequently, the memory requirement grows with the chunk size,
 calculated as: `chunk_size x (sample_size x n_randvecs)`.
 
-<img src="../reference/figures/sme-shared-rvs.png"  width="100%"
+<img src="../man/figures/sme-shared-rvs.png"  width="100%"
 alt="Sparse Marginal Epistasis test (SME) schematic pseudo-random vectors"/>
 **Figure 1.** Schematic overview illustrating the compuational speedup resulting
 from sharing random vectors.
@@ -145,7 +145,7 @@ chunk sizes of 250 SNPs.
 Genome-wide testing of a single trait on an HPC with 960
 CPUs and 6840GB of memory available took about 3.5 days.
 
-<img src="../reference/figures/sme-runtime.png"
+<img src="../man/figures/sme-runtime.png"
 width="100%" alt="Sparse Marginal Epistasis test (SME) runtime" />
 **Figure 2. ** SME has improved power to detect marginal epistasis and runs
 10x to 90x faster than state-of-the-art methods.

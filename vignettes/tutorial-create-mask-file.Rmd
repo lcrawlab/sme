@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(sme)
+library(smer)
 ```
 
 
@@ -25,7 +25,7 @@ mask is for a specific trait. For instance, to test for marginal epistasis
 related to transcriptional activity, DNase I hypersensitivity sites data can be
 used to condition the detection on accessible chromatin regions.
 
-<img src="../reference/figures/sme-schematic-dhs.png"
+<img src="../man/figures/sme-schematic-dhs.png"
 width="100%"
 alt="Sparse Marginal Epistasis test (SME) schematic DHS data" />
 **Figure 1.** The illustration shows open chromatin data. DNase I hypersensitive

@@ -1,8 +1,8 @@
 test_that("sme end-to-end no mask", {
   # given
   plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed",
-                                               package="sme"))
-  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
+                                               package = "smer"))
+  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package = "smer")
   mask_file <- ""
   gxg_h5_group <- "gxg"
   ld_h5_group <- "ld"
@@ -81,9 +81,9 @@ test_that("sme end-to-end no mask", {
 test_that("sme end-to-end with mask", {
   # given
   plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed",
-                                               package="sme"))
-  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
-  mask_file <- system.file("testdata", "test.h5", package="sme")
+                                               package = "smer"))
+  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package = "smer")
+  mask_file <- system.file("testdata", "test.h5", package = "smer")
   gxg_h5_group <- "gxg"
   ld_h5_group <- "ld"
   chunksize <- 3
@@ -160,8 +160,8 @@ test_that("sme end-to-end with mask", {
 test_that("sme end-to-end no mask only one gxg idx", {
   # given
   plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed",
-                                               package="sme"))
-  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
+                                               package = "smer"))
+  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package = "smer")
   gxg_h5_group <- "gxg"
   ld_h5_group <- "ld"
   mask_file <- ""
@@ -222,8 +222,8 @@ test_that("sme end-to-end no mask only one gxg idx", {
 test_that("sme end-to-end no mask - chunksize 1", {
   # given
   plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed",
-                                               package="sme"))
-  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
+                                               package = "smer"))
+  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package = "smer")
   mask_file <- ""
   gxg_h5_group <- "gxg"
   ld_h5_group <- "ld"
@@ -302,9 +302,9 @@ test_that("sme end-to-end no mask - chunksize 1", {
 test_that("sme end-to-end but with mask - chunksize 1", {
   # given
   plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed",
-                                               package="sme"))
-  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
-  mask_file <- system.file("testdata", "test.h5", package="sme")
+                                               package = "smer"))
+  pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package = "smer")
+  mask_file <- system.file("testdata", "test.h5", package = "smer")
   gxg_h5_group <- "gxg"
   ld_h5_group <- "ld"
   chunksize <- 1

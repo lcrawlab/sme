@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(GenomicRanges)
-library(sme)
+library(smer)
 ```
 
 # DNAse I hypersensitive sites of erythroid differentiation reveal statistical epistasis in human hematology traits
@@ -186,7 +186,7 @@ previously discovered for non-additive gene action related to erythropoiesis
 and RBC traits.
 
 
-# <img src="../reference/figures/dhs_manhattan.png"  width="100%" alt="Erythroid differentiation DHS sites SME analysis" />
+# <img src="../man/figures/dhs_manhattan.png"  width="100%" alt="Erythroid differentiation DHS sites SME analysis" />
 **Figure 1.** Manhattan plot of the SME analysis. The dashed blue line is the
 significance threshold after Bonferroni correction.
 
@@ -248,9 +248,9 @@ to heritability estimates found in the literature(Tab. 2).
 **Table 2.** Narrow-sense heritability ($h^2$) estimates in the SME analysis.
 
 # References
-- Stamp J, Pattilo-Smith S, Weinreich D & Crawford L (2024). Integration of
-  functional genomic maps enables genome-wide detection of
-  epistasis in human complex traits. bioRXiv.
+- Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse modeling of 
+  interactions enables fast detection of genome-wide epistasis in biobank-scale 
+  studies. biorxiv, <https://doi.org/10.1101/2025.01.11.632557>
 - Georgolopoulos, G. GEO Data Set: Discrete regulatory modules instruct
   hematopoietic lineage commitment and differentiation
   <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE182816> (2024).

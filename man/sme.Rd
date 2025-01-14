@@ -133,8 +133,8 @@ the gene-by-gene interaction covariance matrix for focal SNP \verb{<j>}.
 \strong{Important}: All indices in the mask file data are \strong{zero-based}, matching the zero-based indices of the PLINK \code{.bim} file.
 }
 \examples{
-plink_file <- gsub("\\\\.bed", "", system.file("testdata", "test.bed", package="sme"))
-pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
+plink_file <- gsub("\\\\.bed", "", system.file("testdata", "test.bed", package="smer"))
+pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="smer")
 mask_file <- ""
 
 # Parameter inputs
@@ -161,10 +161,9 @@ head(sme_result$summary)
 
 }
 \references{
-Stamp, J., Pattillo Smith, S., Weinreich, D., & Crawford, L. (2024).
-Integration of functional genomic maps enables genome-wide detection of
-epistasis in human complex traits.
-bioRxiv.
+Stamp, J., Pattillo Smith, S., Weinreich, D., & Crawford, L. (2025).
+Sparse modeling of interactions enables fast detection of genome-wide
+epistasis in biobank-scale studies. bioRxiv, 2025.01.11.632557.
 
 Stamp, J., DenAdel, A., Weinreich, D., & Crawford, L. (2023).
 Leveraging the genetic correlation between traits improves the detection of

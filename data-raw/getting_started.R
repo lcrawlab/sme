@@ -1,7 +1,7 @@
 set.seed(123)
 library(dplyr)
 library(genio)
-library(sme)
+library(smer)
 
 plink_file <- tempfile()
 n_samples <- 5000

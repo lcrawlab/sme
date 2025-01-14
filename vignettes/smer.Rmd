@@ -34,7 +34,7 @@ to analyze human Biobank scale data.
 This pages presents a toy example to show case what insights the implementation
 of the test provides.
 
-<img src="../reference/figures/sme-schematic-manhattan.png"
+<img src="../man/figures/sme-schematic-manhattan.png"
 width="100%"
 alt="Sparse Marginal Epistasis test (SME) schematic manhattan plot" />
 **Figure 1. ** SME performs a genome-wide search for SNPs involved in genetic
@@ -45,7 +45,7 @@ faster than state-of-the-art methods.
 ## Run SME with PLINK data
 
 ```{r setup}
-library(sme)
+library(smer)
 library(dplyr)
 library(ggplot2)
 ```

@@ -3,7 +3,7 @@ test_that("simulate_traits works", {
   plink_file <-
     gsub("\\.bed",
          "",
-         system.file("testdata", "test.bed", package = "sme"))
+         system.file("testdata", "test.bed", package = "smer"))
   out_file <- tempfile()
   additive_heritability <- 0.3
   gxg_heritability <- 0.1
@@ -36,7 +36,7 @@ test_that("simulate_traits works for zero gxg heritability", {
   plink_file <-
     gsub("\\.bed",
          "",
-         system.file("testdata", "test.bed", package = "sme"))
+         system.file("testdata", "test.bed", package = "smer"))
   out_file <- tempfile()
   additive_heritability <- 0.3
   gxg_heritability <- 0.0
