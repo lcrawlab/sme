@@ -72,6 +72,6 @@ head(getting_started$summary)
 
 }
 \seealso{
-\link[sme]{sme}
+\link[smer]{sme}
 }
 \keyword{datasets}

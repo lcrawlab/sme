@@ -68,7 +68,7 @@ PLINK's phenotype format.
 The `sme()` function includes parameters that let you control memory usage and
 computational resources. For detailed guidance on optimizing these settings for
 your system, please see our tutorial
-[How To Optimize the Memory Requirements of SME](articles/tutorial-memory-optimization.html).
+[How To Optimize the Memory Requirements of SME](https://lcrawlab.github.io/sme/articles/tutorial-memory-optimization.html).
 
 ### Specifying SNPs for Analysis
 
@@ -116,7 +116,7 @@ sme_result <- getting_started
 This analysis uses simulated data for demonstration purposes.
 We simulated synthetic phenotypes from 5000 synthetic genotypes with 6000 SNPs.
 If you would like to learn how to simulate data, please refer to our tutorial
-[How To Simulate Traits](articles/tutorial-simulate-traits.html).
+[How To Simulate Traits](https://lcrawlab.github.io/sme/articles/tutorial-simulate-traits.html).
 
 ### Understanding the Results
 

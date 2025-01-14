@@ -9,8 +9,8 @@ Authors@R: c(
     person("Lorin", "Crawford", email = "lcrawford@microsoft.com",
     role = "aut", comment = c(ORCID = "0000-0003-0178-8242")))
 Description: The 'Sparse Marginal Epistasis Test' is a computationally efficient 
-    genetics method which detects statistical epistasis in complex traits.
-    Stamp et al. (2025) <doi:10.1101/2025.01.11.632557>
+    genetics method which detects statistical epistasis in complex traits
+    <doi:10.1101/2025.01.11.632557>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

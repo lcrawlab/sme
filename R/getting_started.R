@@ -59,7 +59,7 @@
 #' head(getting_started$summary)
 #'
 #' @seealso
-#' \link[sme]{sme}
+#' \link[smer]{sme}
 #'
 #' @keywords datasets
 #' @source data-raw/getting_started.R

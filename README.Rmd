@@ -34,7 +34,7 @@ Find the full package documentation including examples and articles here:
   detecting gene-by-gene interactions.
 -	Optimize for Memory Constraints: Highly configurable block wise processing of the
   data allows to make the most of available resources. See also
-  [How To Optimize the Memory Requirements of SME](articles/tutorial-memory-optimization.html).
+  [How To Optimize the Memory Requirements of SME](https://lcrawlab.github.io/sme/articles/tutorial-memory-optimization.html).
 -	Parallelization: Utilizes OpenMP for multi-threaded processing.
 
 ## Installation
