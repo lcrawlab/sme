@@ -9,7 +9,7 @@ up-to-date.
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `SME` package implements a computationally and statistically
+The `smer` package implements a computationally and statistically
 efficient method for detecting marginal epistasis in genome-wide
 association studies (GWAS). Find the full package documentation
 including examples and articles here: [Sparse Marginal Epistasis test
@@ -31,7 +31,7 @@ Documentation](https://lcrawlab.github.io/sme/).
 
 ## Installation
 
-You can install the development version of `SME` from
+You can install the development version of `smer` from
 [GitHub](https://github.com/) with:
 
 ``` r

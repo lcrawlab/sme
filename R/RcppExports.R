@@ -2,38 +2,38 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 check_openmp <- function() {
-    .Call('_SME_check_openmp', PACKAGE = 'SME')
+    .Call('_smer_check_openmp', PACKAGE = 'smer')
 }
 
 count_samples <- function(filename) {
-    .Call('_SME_count_samples', PACKAGE = 'SME', filename)
+    .Call('_smer_count_samples', PACKAGE = 'smer', filename)
 }
 
 count_fam <- function(filename) {
-    .Call('_SME_count_fam', PACKAGE = 'SME', filename)
+    .Call('_smer_count_fam', PACKAGE = 'smer', filename)
 }
 
 count_snps_bim <- function(filename) {
-    .Call('_SME_count_snps_bim', PACKAGE = 'SME', filename)
+    .Call('_smer_count_snps_bim', PACKAGE = 'smer', filename)
 }
 
 createH5File <- function(filename) {
-    invisible(.Call('_SME_createH5File', PACKAGE = 'SME', filename))
+    invisible(.Call('_smer_createH5File', PACKAGE = 'smer', filename))
 }
 
 readH5File <- function(filename, datasetName) {
-    .Call('_SME_readH5File', PACKAGE = 'SME', filename, datasetName)
+    .Call('_smer_readH5File', PACKAGE = 'smer', filename, datasetName)
 }
 
 replaceH5Dataset <- function(filename, datasetName, newData) {
-    invisible(.Call('_SME_replaceH5Dataset', PACKAGE = 'SME', filename, datasetName, newData))
+    invisible(.Call('_smer_replaceH5Dataset', PACKAGE = 'smer', filename, datasetName, newData))
 }
 
 simulate_traits_cpp <- function(plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2) {
-    .Call('_SME_simulate_traits_cpp', PACKAGE = 'SME', plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2)
+    .Call('_smer_simulate_traits_cpp', PACKAGE = 'smer', plink_file, additive_heritability, gxg_heritability, additive_snps, gxg_group_1, gxg_group_2)
 }
 
 sme_cpp <- function(plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset) {
-    .Call('_SME_sme_cpp', PACKAGE = 'SME', plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset)
+    .Call('_smer_sme_cpp', PACKAGE = 'smer', plink_file, pheno_file, genotype_mask_file, n_randvecs, n_blocks, rand_seed, gxg_indices, n_threads, gxg_h5_dataset, ld_h5_dataset)
 }
 

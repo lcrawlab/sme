@@ -39,7 +39,7 @@
 #' Family ID (`FID`), Individual ID (`IID`), and the simulated trait (`TRAIT`).
 #'
 #' @examples
-#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package = "SME"))
+#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package = "smer"))
 #' out_file <- tempfile()
 #' additive_heritability <- 0.3
 #' gxg_heritability <- 0.1
@@ -59,7 +59,7 @@
 #' from_file <- read.table(out_file, header = TRUE)
 #' head(from_file)
 #'
-#' @useDynLib SME
+#' @useDynLib smer
 #' @import genio
 #' @import dplyr
 #' @importFrom utils write.table

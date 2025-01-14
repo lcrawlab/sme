@@ -24,7 +24,7 @@ Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse modeling of
   interactions enables fast detection of genome-wide epistasis in biobank-scale 
   studies. biorxiv, <https://doi.org/10.1101/2025.01.11.632557>
 
-Stamp J & Crawford L (2025). SME: Sparse Marginal Epistasis Test.
+Stamp J & Crawford L (2025). smer: Sparse Marginal Epistasis Test.
 <https://github.com/lcrawlab/sme>, <https://lcrawlab.github.io/sme/>
 
 

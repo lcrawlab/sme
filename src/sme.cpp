@@ -1,4 +1,4 @@
-/**  sme: An R Package implementation of the Sparse Marginal Epistasis test
+/**  smer: An R Package implementation of the Sparse Marginal Epistasis test
  * with Rcpp Copyright (C) 2024  Julian Stamp This code is licensed under MIT
  * license (see LICENSE.md for details)
  *

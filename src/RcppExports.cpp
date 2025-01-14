@@ -13,7 +13,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 
 // check_openmp
 bool check_openmp();
-RcppExport SEXP _SME_check_openmp() {
+RcppExport SEXP _smer_check_openmp() {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -23,7 +23,7 @@ END_RCPP
 }
 // count_samples
 int count_samples(std::string filename);
-RcppExport SEXP _SME_count_samples(SEXP filenameSEXP) {
+RcppExport SEXP _smer_count_samples(SEXP filenameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -34,7 +34,7 @@ END_RCPP
 }
 // count_fam
 int count_fam(std::string filename);
-RcppExport SEXP _SME_count_fam(SEXP filenameSEXP) {
+RcppExport SEXP _smer_count_fam(SEXP filenameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -45,7 +45,7 @@ END_RCPP
 }
 // count_snps_bim
 int count_snps_bim(std::string filename);
-RcppExport SEXP _SME_count_snps_bim(SEXP filenameSEXP) {
+RcppExport SEXP _smer_count_snps_bim(SEXP filenameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -56,7 +56,7 @@ END_RCPP
 }
 // createH5File
 void createH5File(const std::string& filename);
-RcppExport SEXP _SME_createH5File(SEXP filenameSEXP) {
+RcppExport SEXP _smer_createH5File(SEXP filenameSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type filename(filenameSEXP);
@@ -66,7 +66,7 @@ END_RCPP
 }
 // readH5File
 std::vector<int> readH5File(const std::string& filename, const std::string& datasetName);
-RcppExport SEXP _SME_readH5File(SEXP filenameSEXP, SEXP datasetNameSEXP) {
+RcppExport SEXP _smer_readH5File(SEXP filenameSEXP, SEXP datasetNameSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -78,7 +78,7 @@ END_RCPP
 }
 // replaceH5Dataset
 void replaceH5Dataset(const std::string& filename, const std::string& datasetName, const std::vector<int>& newData);
-RcppExport SEXP _SME_replaceH5Dataset(SEXP filenameSEXP, SEXP datasetNameSEXP, SEXP newDataSEXP) {
+RcppExport SEXP _smer_replaceH5Dataset(SEXP filenameSEXP, SEXP datasetNameSEXP, SEXP newDataSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type filename(filenameSEXP);
@@ -90,7 +90,7 @@ END_RCPP
 }
 // simulate_traits_cpp
 Rcpp::List simulate_traits_cpp(std::string plink_file, float additive_heritability, float gxg_heritability, std::vector<int> additive_snps, std::vector<int> gxg_group_1, std::vector<int> gxg_group_2);
-RcppExport SEXP _SME_simulate_traits_cpp(SEXP plink_fileSEXP, SEXP additive_heritabilitySEXP, SEXP gxg_heritabilitySEXP, SEXP additive_snpsSEXP, SEXP gxg_group_1SEXP, SEXP gxg_group_2SEXP) {
+RcppExport SEXP _smer_simulate_traits_cpp(SEXP plink_fileSEXP, SEXP additive_heritabilitySEXP, SEXP gxg_heritabilitySEXP, SEXP additive_snpsSEXP, SEXP gxg_group_1SEXP, SEXP gxg_group_2SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -106,7 +106,7 @@ END_RCPP
 }
 // sme_cpp
 Rcpp::List sme_cpp(std::string plink_file, std::string pheno_file, std::string genotype_mask_file, int n_randvecs, int n_blocks, int rand_seed, std::vector<int> gxg_indices, int n_threads, std::string gxg_h5_dataset, std::string ld_h5_dataset);
-RcppExport SEXP _SME_sme_cpp(SEXP plink_fileSEXP, SEXP pheno_fileSEXP, SEXP genotype_mask_fileSEXP, SEXP n_randvecsSEXP, SEXP n_blocksSEXP, SEXP rand_seedSEXP, SEXP gxg_indicesSEXP, SEXP n_threadsSEXP, SEXP gxg_h5_datasetSEXP, SEXP ld_h5_datasetSEXP) {
+RcppExport SEXP _smer_sme_cpp(SEXP plink_fileSEXP, SEXP pheno_fileSEXP, SEXP genotype_mask_fileSEXP, SEXP n_randvecsSEXP, SEXP n_blocksSEXP, SEXP rand_seedSEXP, SEXP gxg_indicesSEXP, SEXP n_threadsSEXP, SEXP gxg_h5_datasetSEXP, SEXP ld_h5_datasetSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -128,20 +128,20 @@ END_RCPP
 RcppExport SEXP run_testthat_tests(SEXP);
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_SME_check_openmp", (DL_FUNC) &_SME_check_openmp, 0},
-    {"_SME_count_samples", (DL_FUNC) &_SME_count_samples, 1},
-    {"_SME_count_fam", (DL_FUNC) &_SME_count_fam, 1},
-    {"_SME_count_snps_bim", (DL_FUNC) &_SME_count_snps_bim, 1},
-    {"_SME_createH5File", (DL_FUNC) &_SME_createH5File, 1},
-    {"_SME_readH5File", (DL_FUNC) &_SME_readH5File, 2},
-    {"_SME_replaceH5Dataset", (DL_FUNC) &_SME_replaceH5Dataset, 3},
-    {"_SME_simulate_traits_cpp", (DL_FUNC) &_SME_simulate_traits_cpp, 6},
-    {"_SME_sme_cpp", (DL_FUNC) &_SME_sme_cpp, 10},
+    {"_smer_check_openmp", (DL_FUNC) &_smer_check_openmp, 0},
+    {"_smer_count_samples", (DL_FUNC) &_smer_count_samples, 1},
+    {"_smer_count_fam", (DL_FUNC) &_smer_count_fam, 1},
+    {"_smer_count_snps_bim", (DL_FUNC) &_smer_count_snps_bim, 1},
+    {"_smer_createH5File", (DL_FUNC) &_smer_createH5File, 1},
+    {"_smer_readH5File", (DL_FUNC) &_smer_readH5File, 2},
+    {"_smer_replaceH5Dataset", (DL_FUNC) &_smer_replaceH5Dataset, 3},
+    {"_smer_simulate_traits_cpp", (DL_FUNC) &_smer_simulate_traits_cpp, 6},
+    {"_smer_sme_cpp", (DL_FUNC) &_smer_sme_cpp, 10},
     {"run_testthat_tests", (DL_FUNC) &run_testthat_tests, 1},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_SME(DllInfo *dll) {
+RcppExport void R_init_smer(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }

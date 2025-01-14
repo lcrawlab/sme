@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `SME` package implements a computationally and statistically efficient method
+The `smer` package implements a computationally and statistically efficient method
 for detecting marginal epistasis in genome-wide association studies (GWAS).
 Find the full package documentation including examples and articles here:
 [Sparse Marginal Epistasis test Documentation](https://lcrawlab.github.io/sme/).
@@ -39,7 +39,7 @@ Find the full package documentation including examples and articles here:
 
 ## Installation
 
-You can install the development version of `SME` from [GitHub](https://github.com/)
+You can install the development version of `smer` from [GitHub](https://github.com/)
 with:
 
 ``` r

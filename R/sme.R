@@ -104,8 +104,8 @@
 #' **Important**: All indices in the mask file data are **zero-based**, matching the zero-based indices of the PLINK `.bim` file.
 #'
 #' @examples
-#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package="sme"))
-#' pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="sme")
+#' plink_file <- gsub("\\.bed", "", system.file("testdata", "test.bed", package="smer"))
+#' pheno_file <- system.file("testdata", "test_h2_0.5.pheno", package="smer")
 #' mask_file <- ""
 #'
 #' # Parameter inputs
@@ -130,7 +130,7 @@
 #' )
 #' head(sme_result$summary)
 #'
-#' @useDynLib SME
+#' @useDynLib smer
 #' @import Rcpp
 #' @import RcppEigen
 #' @import dplyr

@@ -66,7 +66,7 @@ The output file is in PLINK-compatible phenotype format with three columns:
 Family ID (\code{FID}), Individual ID (\code{IID}), and the simulated trait (\code{TRAIT}).
 }
 \examples{
-plink_file <- gsub("\\\\.bed", "", system.file("testdata", "test.bed", package = "SME"))
+plink_file <- gsub("\\\\.bed", "", system.file("testdata", "test.bed", package = "smer"))
 out_file <- tempfile()
 additive_heritability <- 0.3
 gxg_heritability <- 0.1

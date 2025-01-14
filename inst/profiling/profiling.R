@@ -1,4 +1,4 @@
-library(sme)
+library(smer)
 library(tidyr)
 
 plink_file <- "/Users/jds/data/ukbb/c12_100k-samples_020k-snps"

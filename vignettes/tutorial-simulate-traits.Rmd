@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(SME)
+library(smer)
 library(genio)
 ```
 

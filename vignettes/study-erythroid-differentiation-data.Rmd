@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(GenomicRanges)
-library(SME)
+library(smer)
 ```
 
 # DNAse I hypersensitive sites of erythroid differentiation reveal statistical epistasis in human hematology traits
