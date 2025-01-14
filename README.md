@@ -9,7 +9,7 @@ up-to-date.
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `sme` package implements a computationally and statistically
+The `SME` package implements a computationally and statistically
 efficient method for detecting marginal epistasis in genome-wide
 association studies (GWAS). Find the full package documentation
 including examples and articles here: [Sparse Marginal Epistasis test
@@ -31,7 +31,7 @@ Documentation](https://lcrawlab.github.io/sme/).
 
 ## Installation
 
-You can install the development version of sme from
+You can install the development version of `SME` from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -65,9 +65,9 @@ file](https://github.com/lcrawlab/sme/blob/main/DESCRIPTION).
 For OS X and Linux, the OpenMP library can be installed via one of the
 (shell) commands specified below:
 
-| System                                      | Command                           |
-|:--------------------------------------------|:----------------------------------|
-| **OS X (using Homebrew)**                   | `brew install libomp`             |
+| System | Command |
+|:---|:---|
+| **OS X (using Homebrew)** | `brew install libomp` |
 | **Debian-based systems (including Ubuntu)** | `sudo apt-get install libomp-dev` |
 
 To enable openMP, it may be necessary to configure the compiler flags
@@ -92,6 +92,13 @@ file configures the compiler flags and considers the `LDFLAGS` and
 
 ## References
 
+- Stamp J, Crawford L (2025). SME: The Sparse Marginal Epistasis Test. R
+  package version 0.0.1, <https://lcrawlab.github.io/sme/>,
+  <https://github.com/lcrawlab/sme>.
+- Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse
+  modeling of interactions enables fast detection of genome-wide
+  epistasis in biobank-scale studies. biorxiv,
+  <https://doi.org/10.1101/2025.01.11.632557>
 - Stamp J, Crawford L (2024). mvMAPIT: Multivariate Genome Wide Marginal
   Epistasis Test. R package version 2.0.3,
   <https://lcrawlab.github.io/mvMAPIT/>,

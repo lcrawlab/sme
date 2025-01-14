@@ -45,7 +45,7 @@ faster than state-of-the-art methods.
 ## Run SME with PLINK data
 
 ```{r setup}
-library(sme)
+library(SME)
 library(dplyr)
 library(ggplot2)
 ```

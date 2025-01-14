@@ -19,11 +19,12 @@ below.
 
 ## The Sparse Marginal Epistasis Test (SME)
 
-Stamp J, Pattilo-Smith S, Weinreich D & Crawford L (2024). Integration of
-functional genomic maps enables genome-wide detection of
-epistasis in human complex traits. bioRXiv.
 
-Stamp J & Crawford L (2024). sme: Sparse Marginal Epistasis Test.
+Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse modeling of 
+  interactions enables fast detection of genome-wide epistasis in biobank-scale 
+  studies. biorxiv, <https://doi.org/10.1101/2025.01.11.632557>
+
+Stamp J & Crawford L (2025). SME: Sparse Marginal Epistasis Test.
 <https://github.com/lcrawlab/sme>, <https://lcrawlab.github.io/sme/>
 
 
