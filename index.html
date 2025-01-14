@@ -5,20 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>The Sparse Marginal Epistasis Test • sme</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
+<title>Sparse Marginal Epistasis Test • smer</title>
 <script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="The Sparse Marginal Epistasis Test">
-<meta name="description" content="A computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;https://doi.org/10.1101/2025.01.11.632557&gt;">
-<meta property="og:description" content="A computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;https://doi.org/10.1101/2025.01.11.632557&gt;">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Sparse Marginal Epistasis Test">
+<meta name="description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;doi:10.1101/2025.01.11.632557&gt;">
+<meta property="og:description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;doi:10.1101/2025.01.11.632557&gt;">
 <meta property="og:image" content="https://lcrawlab.github.io/sme/logo.png">
 <script defer data-domain="pkgdown.r-lib.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
 </head>
@@ -28,7 +22,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
 
-    <a class="navbar-brand me-2" href="index.html">sme</a>
+    <a class="navbar-brand me-2" href="index.html">smer</a>
 
     <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
@@ -39,7 +33,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="articles/sme.html">Get started</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/smer.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
@@ -84,7 +78,7 @@
 </div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The <code>sme</code> package implements a computationally and statistically efficient method for detecting marginal epistasis in genome-wide association studies (GWAS). Find the full package documentation including examples and articles here: <a href="https://lcrawlab.github.io/sme/">Sparse Marginal Epistasis test Documentation</a>.</p>
+<p>The <code>smer</code> package implements a computationally and statistically efficient method for detecting marginal epistasis in genome-wide association studies (GWAS). Find the full package documentation including examples and articles here: <a href="https://lcrawlab.github.io/sme/">Sparse Marginal Epistasis test Documentation</a>.</p>
 <div class="section level2">
 <h2 id="key-features">Key Features<a class="anchor" aria-label="anchor" href="#key-features"></a>
 </h2>
@@ -100,7 +94,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of sme from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<p>You can install the development version of <code>smer</code> from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"lcrawlab/sme"</span><span class="op">)</span></span></code></pre></div>
@@ -127,8 +121,8 @@
 <p>For OS X and Linux, the OpenMP library can be installed via one of the (shell) commands specified below:</p>
 <table class="table">
 <colgroup>
-<col width="56%">
-<col width="43%">
+<col width="50%">
+<col width="50%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">System</th>
@@ -174,6 +168,9 @@
 <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <ul>
+<li>Stamp J, Crawford L (2025). SME: The Sparse Marginal Epistasis Test. R package version 0.0.1, <a href="https://lcrawlab.github.io/sme/" class="uri">https://lcrawlab.github.io/sme/</a>, <a href="https://github.com/lcrawlab/sme" class="external-link uri">https://github.com/lcrawlab/sme</a>.</li>
+<li>Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse modeling of interactions enables fast detection of genome-wide epistasis in biobank-scale studies. biorxiv, <a href="https://doi.org/10.1101/2025.01.11.632557" class="external-link uri">https://doi.org/10.1101/2025.01.11.632557</a>
+</li>
 <li>Stamp J, Crawford L (2024). mvMAPIT: Multivariate Genome Wide Marginal Epistasis Test. R package version 2.0.3, <a href="https://lcrawlab.github.io/mvMAPIT/" class="external-link uri">https://lcrawlab.github.io/mvMAPIT/</a>, <a href="https://github.com/lcrawlab/mvMAPIT" class="external-link uri">https://github.com/lcrawlab/mvMAPIT</a>.</li>
 <li>Stamp et al. (2023): Leveraging genetic correlation between traits for epistasis detection in GWAS. G3: Genes, Genomes, Genetics.</li>
 <li>Fu, B., Pazokitoroudi, A., Xue, A., Anand, A., Anand, P., Zaitlen, N., &amp; Sankararaman, S. (2023). A biobank-scale test of marginal epistasis reveals genome-wide signals of polygenic epistasis. bioRxiv.</li>
@@ -186,7 +183,6 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li><a href="https://cloud.r-project.org/package=sme" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/lcrawlab/sme/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/lcrawlab/sme/issues" class="external-link">Report a bug</a></li>
 </ul>
@@ -204,7 +200,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing sme</a></li>
+<li><a href="authors.html#citation">Citing smer</a></li>
 </ul>
 </div>
 
