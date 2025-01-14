@@ -130,7 +130,7 @@
 #' )
 #' head(sme_result$summary)
 #'
-#' @useDynLib sme
+#' @useDynLib SME
 #' @import Rcpp
 #' @import RcppEigen
 #' @import dplyr
