@@ -92,7 +92,7 @@ file configures the compiler flags and considers the `LDFLAGS` and
 
 ## References
 
-- Stamp J, Crawford L (2025). SME: The Sparse Marginal Epistasis Test. R
+- Stamp J, Crawford L (2025). smer: The Sparse Marginal Epistasis Test. R
   package version 0.0.1, <https://lcrawlab.github.io/sme/>,
   <https://github.com/lcrawlab/sme>.
 - Stamp J, Smith Pattillo S, Weinreich D, Crawford L (2025). Sparse
