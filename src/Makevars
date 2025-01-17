@@ -1,5 +1,5 @@
 ## Use the R_HOME indirection to support installations of multiple R version
-RHDF5_LIBS=$(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript" -e 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")') 
-PKG_LIBS = -L/usr/local/lib -L/opt/homebrew/lib $(LDFLAGS) $(SHLIB_OPENMP_CXXFLAGS) -lhdf5 $(RHDF5_LIBS)
-PKG_CPPFLAGS = -I../inst/include/ -I/usr/local/include -I/opt/homebrew/include $(CPPFLAGS) 
+RHDF5_LIBS=$(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript" -e 'Rhdf5lib::pkgconfig("PKG_CXX_LIBS")')
+PKG_LIBS = -L/usr/local/lib -L/opt/homebrew/lib $(LDFLAGS) $(SHLIB_OPENMP_CXXFLAGS) $(RHDF5_LIBS)
+PKG_CPPFLAGS = -I../inst/include/ -I/usr/local/include -I/opt/homebrew/include $(CPPFLAGS)
 PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)

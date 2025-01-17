@@ -7,6 +7,11 @@ up-to-date.
 # The Sparse Marginal Epistasis test <img src="man/figures/logo.png" align="right" height="200" alt="" />
 
 <!-- badges: start -->
+
+[![R-CMD-check.yaml](https://github.com/lcrawlab/sme/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/lcrawlab/sme/actions/workflows/r-cmd-check.yml)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/smer)](https://cranlogs.r-pkg.org/badges/grand-total/smer)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/smer)](https://cran.r-project.org/package=smer)
 <!-- badges: end -->
 
 The `smer` package implements a computationally and statistically
@@ -26,7 +31,7 @@ Documentation](https://lcrawlab.github.io/sme/).
 - Optimize for Memory Constraints: Highly configurable block wise
   processing of the data allows to make the most of available resources.
   See also [How To Optimize the Memory Requirements of
-  SME](articles/tutorial-memory-optimization.html).
+  SME](https://lcrawlab.github.io/sme/articles/tutorial-memory-optimization.html).
 - Parallelization: Utilizes OpenMP for multi-threaded processing.
 
 ## Installation

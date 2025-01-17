@@ -138,7 +138,7 @@ kable(estimated_memory)
 Despite the computational efficiency of SME, genome-wide testing requires
 considerable resources. We recommend to analyze data in batches, and to launch
 multiple processes simultaneously on a high-performance cluster (HPC).
-In [this study](articles/study-erythroid-differentiation-data.html),
+In [this study](https://lcrawlab.github.io/sme/articles/study-erythroid-differentiation-data.html),
 we analyzed 544k SNPs genotype in 350k individuals. We launched 544 slurm jobs
 requesting 43GB memory and 6 CPUs each to analyze batches of 1000 SNPs with
 chunk sizes of 250 SNPs.

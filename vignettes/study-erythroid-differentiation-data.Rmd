@@ -48,7 +48,7 @@ HCT, is not informed by functional data of erythropoiesis.
 The external data sources used in this study represented genomic intervals
 of DHS regions and LD blocks. In the following we mock this data to illustrate
 how to create a mask file for `sme()`.
-See [How To Create a Mask File](articles/tutorial-create-mask-file.html) for
+See [How To Create a Mask File](https://lcrawlab.github.io/sme/articles/tutorial-create-mask-file.html) for
 more details.
 
 ```{r bim_data}

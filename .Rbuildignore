@@ -16,3 +16,7 @@
 ^data-raw$
 ^dev$
 .github
+^src/test-genotype_masking.cpp$
+^src/test-mqs.cpp$
+^src/test-read_genotype_mask.cpp$
+^tests/testthat/test-cpp.R$
