@@ -36,6 +36,16 @@ Documentation](https://lcrawlab.github.io/sme/).
 
 ## Installation
 
+### Installation from CRAN
+
+You can install the latest release from CRAN
+
+```
+install.packages("smer")
+```
+
+### Installation from source
+
 You can install the development version of `smer` from
 [GitHub](https://github.com/) with:
 
