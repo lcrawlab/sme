@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Sparse Marginal Epistasis Test">
-<meta name="description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;doi:10.1101/2025.01.11.632557&gt;">
-<meta property="og:description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits. Stamp et al. (2025) &lt;doi:10.1101/2025.01.11.632557&gt;">
+<meta name="description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits; see Stamp et al. (2025, &lt;doi:10.1101/2025.01.11.632557&gt;) for details.">
+<meta property="og:description" content="The Sparse Marginal Epistasis Test is a computationally efficient genetics method which detects statistical epistasis in complex traits; see Stamp et al. (2025, &lt;doi:10.1101/2025.01.11.632557&gt;) for details.">
 <meta property="og:image" content="https://lcrawlab.github.io/sme/logo.png">
 <script defer data-domain="pkgdown.r-lib.org,all.tidyverse.org" src="https://plausible.io/js/plausible.js"></script>
 </head>
@@ -77,7 +77,7 @@
 </h1>
 </div>
 <!-- badges: start -->
-<!-- badges: end -->
+
 <p>The <code>smer</code> package implements a computationally and statistically efficient method for detecting marginal epistasis in genome-wide association studies (GWAS). Find the full package documentation including examples and articles here: <a href="https://lcrawlab.github.io/sme/">Sparse Marginal Epistasis test Documentation</a>.</p>
 <div class="section level2">
 <h2 id="key-features">Key Features<a class="anchor" aria-label="anchor" href="#key-features"></a>
@@ -87,7 +87,7 @@
 <li>Mailman algorithm: fast vector-by-matrix operation</li>
 <li>Linear mixed model: controls for population structure</li>
 <li>Multimodal Input: incorporates additional data from HDF5 files to improve power in detecting gene-by-gene interactions.</li>
-<li>Optimize for Memory Constraints: Highly configurable block wise processing of the data allows to make the most of available resources. See also <a href="articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of SME</a>.</li>
+<li>Optimize for Memory Constraints: Highly configurable block wise processing of the data allows to make the most of available resources. See also <a href="https://lcrawlab.github.io/sme/articles/tutorial-memory-optimization.html">How To Optimize the Memory Requirements of SME</a>.</li>
 <li>Parallelization: Utilizes OpenMP for multi-threaded processing.</li>
 </ul>
 </div>
@@ -183,6 +183,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=smer" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/lcrawlab/sme/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/lcrawlab/sme/issues" class="external-link">Report a bug</a></li>
 </ul>
@@ -209,10 +210,18 @@
 <ul class="list-unstyled">
 <li>Julian Stamp <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0003-3014-6249" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Lorin Crawford <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0003-0178-8242" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/lcrawlab/sme/actions/workflows/r-cmd-check.yml" class="external-link"><img src="https://github.com/lcrawlab/sme/actions/workflows/r-cmd-check.yml/badge.svg" alt="R-CMD-check.yaml"></a></li>
+<li><a href="https://cranlogs.r-pkg.org/badges/grand-total/smer" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/smer" alt="CRAN downloads"></a></li>
+<li><a href="https://cran.r-project.org/package=smer" class="external-link"><img src="https://www.r-pkg.org/badges/version/smer" alt="CRAN_Status_Badge"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
