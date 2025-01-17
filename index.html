@@ -171,6 +171,7 @@
 <div class="section level2">
 <h2 id="known-issues">Known Issues<a class="anchor" aria-label="anchor" href="#known-issues"></a>
 </h2>
+<p>If the error is <code>ld: library "crypto" not found</code>, install <code>openssl</code> (e.g. <code>brew install openssl</code>).</p>
 <p>Compiling the package requires the compiler to find the libraries for the dependencies. For unix systems, the libraries are typically installed at <code>/usr/local/lib</code> and <code>/usr/local/include</code>. For users using OS X and homebrew, the libraries are typically installed at <code>/opt/homebrew/lib</code> and <code>/opt/homebrew/include</code>.</p>
 <p>Non-standard library paths need to be configured. The <code>src/Makevars</code> file configures the compiler flags and considers the <code>LDFLAGS</code> and <code>CPPFLAGS</code> from the <code>~/.R/Makevars</code> file.</p>
 </div>
