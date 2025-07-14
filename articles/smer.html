@@ -262,7 +262,7 @@ variation.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html" class="external-link">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external-link">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="fl">0.3</span>, color <span class="op">=</span> <span class="st">"grey40"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external-link">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span>  <span class="fl">0.33</span>,</span>
-<span>           label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="st">"True "</span> <span class="op">*</span> <span class="va">h</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span>  <span class="op">+</span></span>
+<span>           label <span class="op">=</span> <span class="st">"'True ' * h^2"</span>, color <span class="op">=</span> <span class="st">"black"</span>, parse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>  <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">xlab</a></span><span class="op">(</span><span class="st">"Component"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ylab</a></span><span class="op">(</span><span class="st">"Variance Component Estimate"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
@@ -279,9 +279,9 @@ heritability but it is unbiased in general.</p>
 </h2>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; R version 4.4.2 (2024-10-31)</span></span>
+<span><span class="co">#&gt; R version 4.5.1 (2025-06-13)</span></span>
 <span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu</span></span>
-<span><span class="co">#&gt; Running under: Ubuntu 24.04.1 LTS</span></span>
+<span><span class="co">#&gt; Running under: Ubuntu 24.04.2 LTS</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Matrix products: default</span></span>
 <span><span class="co">#&gt; BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 </span></span>
@@ -300,28 +300,28 @@ heritability but it is unbiased in general.</p>
 <span><span class="co">#&gt; [1] stats     graphics  grDevices utils     datasets  methods   base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt; [1] ggplot2_3.5.1 dplyr_1.1.4   smer_0.0.1   </span></span>
+<span><span class="co">#&gt; [1] ggplot2_3.5.2 dplyr_1.1.4   smer_0.0.1   </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
-<span><span class="co">#&gt;  [1] gtable_0.3.6        jsonlite_1.8.9      compiler_4.4.2     </span></span>
-<span><span class="co">#&gt;  [4] tidyselect_1.2.1    Rcpp_1.0.14         FMStable_0.1-4     </span></span>
-<span><span class="co">#&gt;  [7] parallel_4.4.2      tidyr_1.3.1         jquerylib_0.1.4    </span></span>
-<span><span class="co">#&gt; [10] scales_1.3.0        systemfonts_1.2.0   textshaping_0.4.1  </span></span>
+<span><span class="co">#&gt;  [1] gtable_0.3.6        jsonlite_2.0.0      compiler_4.5.1     </span></span>
+<span><span class="co">#&gt;  [4] tidyselect_1.2.1    Rcpp_1.1.0          FMStable_0.1-4     </span></span>
+<span><span class="co">#&gt;  [7] parallel_4.5.1      tidyr_1.3.1         jquerylib_0.1.4    </span></span>
+<span><span class="co">#&gt; [10] scales_1.4.0        systemfonts_1.2.3   textshaping_1.0.1  </span></span>
 <span><span class="co">#&gt; [13] harmonicmeanp_3.0.1 yaml_2.3.10         fastmap_1.2.0      </span></span>
-<span><span class="co">#&gt; [16] R6_2.5.1            labeling_0.4.3      generics_0.1.3     </span></span>
-<span><span class="co">#&gt; [19] knitr_1.49          genio_1.1.2         iterators_1.0.14   </span></span>
-<span><span class="co">#&gt; [22] backports_1.5.0     checkmate_2.3.2     tibble_3.2.1       </span></span>
-<span><span class="co">#&gt; [25] desc_1.4.3          munsell_0.5.1       bslib_0.8.0        </span></span>
-<span><span class="co">#&gt; [28] pillar_1.10.1       rlang_1.1.4         cachem_1.1.0       </span></span>
-<span><span class="co">#&gt; [31] xfun_0.50           fs_1.6.5            sass_0.4.9         </span></span>
-<span><span class="co">#&gt; [34] cli_3.6.3           withr_3.0.2         pkgdown_2.1.1      </span></span>
-<span><span class="co">#&gt; [37] magrittr_2.0.3      grid_4.4.2          digest_0.6.37      </span></span>
+<span><span class="co">#&gt; [16] R6_2.6.1            labeling_0.4.3      generics_0.1.4     </span></span>
+<span><span class="co">#&gt; [19] knitr_1.50          genio_1.1.2         iterators_1.0.14   </span></span>
+<span><span class="co">#&gt; [22] backports_1.5.0     checkmate_2.3.2     tibble_3.3.0       </span></span>
+<span><span class="co">#&gt; [25] desc_1.4.3          RColorBrewer_1.1-3  bslib_0.9.0        </span></span>
+<span><span class="co">#&gt; [28] pillar_1.11.0       rlang_1.1.6         cachem_1.1.0       </span></span>
+<span><span class="co">#&gt; [31] xfun_0.52           fs_1.6.6            sass_0.4.10        </span></span>
+<span><span class="co">#&gt; [34] cli_3.6.5           withr_3.0.2         pkgdown_2.1.3      </span></span>
+<span><span class="co">#&gt; [37] magrittr_2.0.3      grid_4.5.1          digest_0.6.37      </span></span>
 <span><span class="co">#&gt; [40] mvMAPIT_2.0.3       foreach_1.5.2       mvtnorm_1.3-3      </span></span>
-<span><span class="co">#&gt; [43] lifecycle_1.0.4     CompQuadForm_1.4.3  vctrs_0.6.5        </span></span>
-<span><span class="co">#&gt; [46] evaluate_1.0.3      glue_1.8.0          farver_2.1.2       </span></span>
-<span><span class="co">#&gt; [49] codetools_0.2-20    ragg_1.3.3          colorspace_2.1-1   </span></span>
-<span><span class="co">#&gt; [52] purrr_1.0.2         rmarkdown_2.29      tools_4.4.2        </span></span>
-<span><span class="co">#&gt; [55] pkgconfig_2.0.3     htmltools_0.5.8.1</span></span></code></pre></div>
+<span><span class="co">#&gt; [43] lifecycle_1.0.4     CompQuadForm_1.4.4  vctrs_0.6.5        </span></span>
+<span><span class="co">#&gt; [46] evaluate_1.0.4      glue_1.8.0          farver_2.1.2       </span></span>
+<span><span class="co">#&gt; [49] codetools_0.2-20    ragg_1.4.0          purrr_1.1.0        </span></span>
+<span><span class="co">#&gt; [52] rmarkdown_2.29      tools_4.5.1         pkgconfig_2.0.3    </span></span>
+<span><span class="co">#&gt; [55] htmltools_0.5.8.1</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -334,7 +334,7 @@ heritability but it is unbiased in general.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
