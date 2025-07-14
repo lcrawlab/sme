@@ -200,7 +200,7 @@ sme_result$vc_estimate %>%
   geom_boxplot() +
   geom_hline(yintercept = 0.3, color = "grey40", linetype = "dashed") +
   annotate("text", x = 0.7, y =  0.33,
-           label = expression("True " * h^2), color = "black")  +
+           label = "'True ' * h^2", color = "black", parse = TRUE)  +
   xlab("Component") +
   ylab("Variance Component Estimate") +
   theme(legend.position = "none")
