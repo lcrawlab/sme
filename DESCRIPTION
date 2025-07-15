@@ -8,8 +8,7 @@ Authors@R: c(
     role = c("cre", "aut"), comment = c(ORCID = "0000-0003-3014-6249")),
     person("Lorin", "Crawford", email = "lcrawford@microsoft.com",
     role = "aut", comment = c(ORCID = "0000-0003-0178-8242")),
-    person("sriramlab", role = "cph", comment = "Author of included mailman algorithm"),
-    person("Blue Brain Project/EPFL", role = "cph", comment = "Author of included HighFive library"))
+    person("sriramlab", role = "cph", comment = "Author of included mailman algorithm"))
 Description: The Sparse Marginal Epistasis Test is a computationally efficient 
     genetics method which detects statistical epistasis in complex traits;
     see Stamp et al. (2025, <doi:10.1101/2025.01.11.632557>) for details.
@@ -19,6 +18,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 LinkingTo:
     BH,
+    HighFive,
     Rcpp,
     RcppEigen,
     Rhdf5lib,
