@@ -1,6 +1,7 @@
 # smer 0.0.2
 
-* ggplot2 update on CRAN compatibility
+* ggplot2 update for CRAN compatibility
+* link to new R package HighFive instead of shipping the library
 
 # smer 0.0.1
 
