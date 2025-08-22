@@ -1,6 +1,6 @@
 Package: smer
 Title: Sparse Marginal Epistasis Test
-Version: 0.0.1
+Version: 0.0.2
 URL: https://github.com/lcrawlab/sme, https://lcrawlab.github.io/sme/
 BugReports: https://github.com/lcrawlab/sme/issues
 Authors@R: c(
